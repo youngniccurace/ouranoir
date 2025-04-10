@@ -1,9 +1,0 @@
-  =>  Template Name    : OuraServ - Ouraing Services Website Template
-
-  =>  Template Link    : https://aquikee.co.ke/Ouraing-services-website-template
-
-  =>  Template License : https://aquikee.co.ke/license (or read the LICENSE.txt file)
-
-  =>  Template Author  : Aquikee
-
-  =>  Author Website   : https://aquikee.co.ke

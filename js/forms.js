@@ -22,7 +22,9 @@
 
     function setError(form, name, message) {
         var field = form.elements[name];
-        var box = form.querySelector("#" + name + "-error");
+        if (field && !field.classList && field.length) field = null; // checkbox groups have no single field
+        // getElementById: names like "services[]" are not valid CSS selectors
+        var box = document.getElementById(name + "-error");
         if (field && field.classList) {
             field.classList.toggle("is-invalid", !!message);
             field.setAttribute("aria-invalid", message ? "true" : "false");
@@ -107,7 +109,8 @@
                         show("success", result.message);
                         form.reset();
                         if (started) started.value = String(Date.now());
-                        if (window.ouranoirTrack) window.ouranoirTrack("contact_form_submit");
+                        var type = form.elements.form_type ? form.elements.form_type.value : "contact";
+                        if (window.ouranoirTrack) window.ouranoirTrack("generate_lead", { form: type });
                     } else {
                         var errors = result.errors || {};
                         Object.keys(errors).forEach(function (name) { setError(form, name, errors[name]); });

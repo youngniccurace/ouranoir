@@ -46,9 +46,39 @@ OG_IMAGE_ALT = "OuraNoir - OnlyFans management agency. You create. We grow your 
 PAGES = [
     {
         "file": "index.html", "content": "index", "nav": "home", "path": "",
-        "title": "OuraNoir | OnlyFans Management Agency for Creators",
-        "description": "OuraNoir is a full-service OnlyFans management agency. We handle strategy, promotion, fan engagement and privacy so you can focus on creating. Apply in 5 minutes.",
+        "title": "OuraNoir | Creator Management Agency for OnlyFans Creators & Agencies",
+        "description": "OuraNoir is a creator management agency: we manage OnlyFans creators, support agencies with chatters and traffic specialists, hire remote talent and build partnerships.",
         "priority": "1.0",
+    },
+    {
+        "file": "creators.html", "content": "creators", "nav": "creators", "path": "creators.html",
+        "title": "OnlyFans Creator Management | Grow Your Page | OuraNoir",
+        "description": "Management for OnlyFans creators: revenue optimization, marketing, 24/7 fan engagement and privacy protection. You keep full ownership. Apply in 5 minutes.",
+        "priority": "0.9",
+    },
+    {
+        "file": "agencies.html", "content": "agencies", "nav": "agencies", "path": "agencies.html",
+        "title": "Services For OnlyFans Agencies | Chatters, Traffic & Operations | OuraNoir",
+        "description": "Scale your agency with trained 24/7 chatting teams, traffic specialists, back-office operations and white-label support from OuraNoir.",
+        "priority": "0.8", "scripts": ["js/forms.min.js"],
+    },
+    {
+        "file": "careers.html", "content": "careers", "nav": "careers", "path": "careers.html",
+        "title": "Careers | Remote Chatter & Traffic Specialist Jobs | OuraNoir",
+        "description": "Join OuraNoir's remote team as a chatter, traffic specialist, social media manager, editor or account manager. Flexible hours and real training. 18+.",
+        "priority": "0.8", "scripts": ["js/forms.min.js"],
+    },
+    {
+        "file": "partnerships.html", "content": "partnerships", "nav": "partnerships", "path": "partnerships.html",
+        "title": "Partnerships | Brands, Platforms & Promoters | OuraNoir",
+        "description": "Partner with OuraNoir: brand collaborations, creator tools, traffic sources, studios and agency referrals. Creator-first, brand-safe partnerships.",
+        "priority": "0.7", "scripts": ["js/forms.min.js"],
+    },
+    {
+        "file": "investors.html", "content": "investors", "nav": "investors", "path": "investors.html",
+        "title": "Investors | OuraNoir Creator Management",
+        "description": "Learn about OuraNoir's diversified creator management business: creator management, agency services and remote teams. Request investor information.",
+        "priority": "0.5", "scripts": ["js/forms.min.js"],
     },
     {
         "file": "about.html", "content": "about", "nav": "about", "path": "about.html",
@@ -93,11 +123,12 @@ PAGES = [
 EXTRA_SITEMAP = [("apply/", "0.9")]
 
 NAV_ITEMS = [
-    ("home", "index.html", "Home"),
+    ("creators", "creators.html", "Creators"),
+    ("agencies", "agencies.html", "Agencies"),
+    ("careers", "careers.html", "Careers"),
+    ("partnerships", "partnerships.html", "Partners"),
+    ("investors", "investors.html", "Investors"),
     ("about", "about.html", "About"),
-    ("services", "service.html", "Services"),
-    ("process", "index.html#process", "How It Works"),
-    ("faq", "index.html#faq", "FAQ"),
     ("contact", "contact.html", "Contact"),
 ]
 
@@ -188,6 +219,7 @@ def head(page: dict) -> str:
         <!-- Self-hosted fonts and styles (no third-party requests before consent) -->
 {preload}
 {styles}
+        <script src="{versioned("js/theme.js")}"></script>
 
 {scripts}{jsonld}
     </head>
@@ -218,7 +250,12 @@ def navbar(active: str) -> str:
                         <div class="navbar-nav mx-auto">
 {links}
                         </div>
-                        <a href="apply/" class="btn btn-primary py-2 px-4 rounded-pill nav-cta">Apply Now</a>
+                        <div class="nav-tools">
+                            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" title="Dark / light mode">
+                                <i class="fas fa-moon theme-icon-moon"></i><i class="fas fa-sun theme-icon-sun"></i>
+                            </button>
+                            <a href="apply/" class="btn btn-primary py-2 px-4 rounded-pill nav-cta">Apply Now</a>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -253,19 +290,30 @@ def footer() -> str:
                             <p class="lh-lg mb-4">A full-service management agency helping creators grow their brand, their audience and their income &mdash; on their own terms.</p>{social_block}
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <nav class="footer-item" aria-label="Footer">
-                            <h2 class="h4 mb-4">Quick Links</h2>
+                    <div class="col-lg-3 col-md-6">
+                        <nav class="footer-item" aria-label="Work with us">
+                            <h2 class="h4 mb-4">Work With Us</h2>
+                            <ul class="list-unstyled footer-links mb-0">
+                                <li><a href="creators.html"><i class="fa fa-angle-right text-primary me-2"></i>For Creators</a></li>
+                                <li><a href="agencies.html"><i class="fa fa-angle-right text-primary me-2"></i>For Agencies</a></li>
+                                <li><a href="careers.html"><i class="fa fa-angle-right text-primary me-2"></i>Careers</a></li>
+                                <li><a href="partnerships.html"><i class="fa fa-angle-right text-primary me-2"></i>Partnerships</a></li>
+                                <li><a href="investors.html"><i class="fa fa-angle-right text-primary me-2"></i>Investors</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <nav class="footer-item" aria-label="Company">
+                            <h2 class="h4 mb-4">Company</h2>
                             <ul class="list-unstyled footer-links mb-0">
                                 <li><a href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a></li>
                                 <li><a href="service.html"><i class="fa fa-angle-right text-primary me-2"></i>Services</a></li>
-                                <li><a href="index.html#process"><i class="fa fa-angle-right text-primary me-2"></i>How It Works</a></li>
-                                <li><a href="index.html#faq"><i class="fa fa-angle-right text-primary me-2"></i>FAQ</a></li>
+                                <li><a href="creators.html#faq"><i class="fa fa-angle-right text-primary me-2"></i>FAQ</a></li>
                                 <li><a href="apply/"><i class="fa fa-angle-right text-primary me-2"></i>Apply Now</a></li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-3 col-md-6">
                         <div class="footer-item">
                             <h2 class="h4 mb-4">Contact Us</h2>
                             <ul class="list-unstyled footer-links mb-4">
@@ -313,6 +361,31 @@ def footer() -> str:
 """
 
 
+# --- Images: {{img:NAME}} or {{img:NAME:extra-classes}} or {{img:NAME:extra-classes:eager}} ------------
+# NAME refers to tools/stock-photos.txt (alt text + crop). Two WebP widths are generated per photo.
+STOCK = {}
+for _line in (Path(__file__).resolve().parent / "stock-photos.txt").read_text(encoding="utf-8").splitlines():
+    if _line and not _line.startswith("#"):
+        _name, _pid, _crop, _alt = _line.split("|")
+        STOCK[_name] = (_crop, _alt)
+IMG_SIZES = {
+    "square": ((400, 400), (800, 800), "(max-width: 991px) 45vw, 280px"),
+    "card": ((480, 360), (960, 720), "(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 380px"),
+    "wide": ((640, 480), (1200, 900), "(max-width: 991px) 100vw, 560px"),
+}
+IMG_RE = re.compile(r"\{\{img:([a-z0-9-]+)(?::([^:}]*))?(?::(eager))?\}\}")
+
+
+def img_tag(m: re.Match) -> str:
+    name, classes, eager = m.group(1), (m.group(2) or "").strip(), m.group(3)
+    crop, alt = STOCK[name]
+    (w1, h1), (w2, h2), sizes = IMG_SIZES[crop]
+    loading = 'fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
+    cls = f' class="{classes}"' if classes else ""
+    return (f'<img src="img/stock/{name}-{w2}.webp" srcset="img/stock/{name}-{w1}.webp {w1}w, img/stock/{name}-{w2}.webp {w2}w" '
+            f'sizes="{sizes}" width="{w2}" height="{h2}" alt="{esc(alt)}"{cls} {loading}>')
+
+
 # --- Markup transforms applied to every page --------------------------------
 ICON_RE = re.compile(r'<(?:i|span) class="(fas|fab|fa) fa-([a-z0-9-]+)([^"]*)"></(?:i|span)>')
 SIZE_CLASSES = {"fa-2x", "fa-3x", "fa-4x", "fa-5x", "fa-7x", "fa-fw"}
@@ -327,6 +400,7 @@ def icon_svg(m: re.Match) -> str:
 
 
 def transform(body: str) -> str:
+    body = IMG_RE.sub(img_tag, body)
     body = ICON_RE.sub(icon_svg, body)
     # Entrance animations: animate.css/WOW.js replaced by a lightweight reveal-on-scroll (js/main.js).
     # Content above the fold is no longer animated so it paints immediately.

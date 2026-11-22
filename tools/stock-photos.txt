@@ -1,0 +1,20 @@
+# name | unsplash photo id | crop | alt text
+# Temporary stock photos from Unsplash (free to use under the Unsplash License: https://unsplash.com/license).
+# Replace with your own photos when you have them (same file names = no code changes).
+hero-center|1544005313-94ddf0286df2|square|Creator smiling in warm golden light
+hero-tl|1524504388940-b1c1722653e1|square|Creator posing for a portrait in a dark studio
+hero-tr|1516035069371-29a1b244cc32|square|Professional camera and lenses on a dark surface
+hero-bl|1586953208448-b95a79798f07|square|Smartphone showing a social media feed
+hero-br|1460925895917-afdab827c52f|square|Laptop showing a growth analytics dashboard
+aud-creators|1494790108377-be9c29b29330|card|Confident creator smiling at the camera
+aud-agencies|1542744173-8e7e53415bb0|card|Agency team meeting around a table with laptops
+aud-careers|1563986768609-322da13575f3|card|Team member chatting on a phone and laptop
+aud-partners|1521791136064-7986c2920216|card|Two business partners shaking hands
+aud-investors|1551288049-bebda4e38f71|card|Business analytics dashboard with growth charts
+page-creators|1517841905240-472988babdf9|wide|Creator in a denim jacket smiling against a blue wall
+page-agencies|1551836022-d5d88e9218df|wide|Agency manager working on a laptop in a bright office
+page-careers|1522202176988-66273c2fd55f|wide|Remote team members working together on laptops
+page-partners|1600880292203-757bb62b4baf|wide|Partners celebrating a deal with a high five
+page-investors|1556761175-b413da4baf72|wide|Modern open-plan office with a team at work
+page-about|1552664730-d307ca884978|wide|Team planning strategy together at a whiteboard
+page-contact|1580489944761-15a19d654956|wide|Friendly team member smiling

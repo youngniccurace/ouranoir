@@ -2,6 +2,26 @@
 (function () {
     "use strict";
 
+    // --- Dark / light mode toggle (initial theme is set by js/theme.js) ---
+    var root = document.documentElement;
+    function syncThemeButtons() {
+        var dark = root.getAttribute("data-theme") === "dark";
+        Array.prototype.forEach.call(document.querySelectorAll("[data-theme-toggle]"), function (btn) {
+            btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+            btn.setAttribute("aria-pressed", dark ? "true" : "false");
+        });
+    }
+    document.addEventListener("click", function (e) {
+        var btn = e.target.closest && e.target.closest("[data-theme-toggle]");
+        if (!btn) return;
+        var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        root.classList.toggle("dark", next === "dark");
+        try { localStorage.setItem("ouranoir-theme", next); } catch (err) { /* ignore */ }
+        syncThemeButtons();
+    });
+    syncThemeButtons();
+
     // --- Mobile navigation toggle ---
     var toggler = document.querySelector(".navbar-toggler");
     var menu = document.getElementById("navbarCollapse");

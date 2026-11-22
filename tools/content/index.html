@@ -1,45 +1,30 @@
         <!-- Hero Start -->
-        <!-- Dark editorial hero (design from the Lovable version, built properly).
-             To use a photo behind it, set --hero-photo in css/style.css (see .hero-noir). -->
-        <section class="hero-noir" aria-labelledby="hero-title">
-            <div class="hero-noir-bg" aria-hidden="true">
-                <span class="hero-noir-glow hero-noir-glow-1"></span>
-                <span class="hero-noir-glow hero-noir-glow-2"></span>
-                <span class="hero-noir-watermark">ON</span>
-            </div>
-            <div class="container position-relative">
+        <!-- White hero with the diamond "X" photo collage (layout inspired by the original template hero).
+             Photos: img/stock/hero-*.webp (temporary Unsplash photos, see img/stock/CREDITS.md). -->
+        <section class="home-hero" aria-labelledby="hero-title">
+            <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-7">
+                    <div class="col-lg-6">
                         <p class="hero-eyebrow">Creator Management Agency</p>
                         <h1 id="hero-title" class="hero-title">We grow your audience.<br><em>You keep creating.</em></h1>
-                        <p class="hero-lead">OuraNoir handles your strategy, marketing and monetization &mdash; so you can focus on what you do best. More earnings, less guesswork, and your account always stays yours.</p>
+                        <p class="hero-lead">OuraNoir is the team behind ambitious creators. We manage OnlyFans creators, power agencies with trained chatters and traffic specialists, and build partnerships across the creator economy.</p>
                         <div class="hero-actions">
                             <a href="apply/" class="btn btn-primary rounded-pill py-3 px-4 px-md-5 me-3 mb-3">Start Your Application <i class="fas fa-arrow-right ps-2"></i></a>
-                            <a href="#process" class="btn btn-outline-light rounded-pill py-3 px-4 px-md-5 mb-3">See How It Works</a>
+                            <a href="#who-we-serve" class="btn btn-outline-dark rounded-pill py-3 px-4 px-md-5 mb-3">Explore What We Do</a>
                         </div>
                         <p class="hero-trust"><i class="fas fa-lock me-2"></i>18+ only &middot; Confidential &middot; Takes about 5 minutes</p>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="hero-visual">
-                            <div class="noir-card hero-card">
-                                <div class="noir-monogram">ON</div>
-                                <p class="noir-tagline">Elite creator management</p>
-                                <ul class="noir-list list-unstyled mb-0">
-                                    <li><i class="fas fa-chart-line"></i>Revenue &amp; pricing strategy</li>
-                                    <li><i class="fas fa-bullhorn"></i>Marketing &amp; growth</li>
-                                    <li><i class="fas fa-comments"></i>24/7 fan engagement</li>
-                                    <li><i class="fas fa-user-shield"></i>Privacy &amp; leak protection</li>
-                                </ul>
-                            </div>
-                            <!-- Floating detail cards. TODO: swap one for a real, verifiable stat (e.g. creators managed) when you have it. -->
-                            <div class="hero-chip hero-chip-1">
-                                <i class="fas fa-user-check"></i>
-                                <span><strong>Reviewed personally</strong>No bots, no templates</span>
-                            </div>
-                            <div class="hero-chip hero-chip-2">
-                                <i class="fas fa-key"></i>
-                                <span><strong>You own your account</strong>Always, from day one</span>
-                            </div>
+                    <div class="col-lg-6">
+                        <div class="x-collage">
+                            <div class="x-item x-tl">{{img:hero-tl}}</div>
+                            <div class="x-item x-tr">{{img:hero-tr}}</div>
+                            <div class="x-item x-center">{{img:hero-center::eager}}</div>
+                            <div class="x-item x-bl">{{img:hero-bl}}</div>
+                            <div class="x-item x-br">{{img:hero-br}}</div>
+                            <span class="x-icon x-icon-top" aria-hidden="true"><i class="fas fa-heart"></i></span>
+                            <span class="x-icon x-icon-left" aria-hidden="true"><i class="fas fa-comments"></i></span>
+                            <span class="x-icon x-icon-right" aria-hidden="true"><i class="fas fa-chart-line"></i></span>
+                            <span class="x-icon x-icon-bottom" aria-hidden="true"><i class="fas fa-crown"></i></span>
                         </div>
                     </div>
                 </div>
@@ -48,272 +33,144 @@
         <!-- Hero End -->
 
 
-        <!-- About Start -->
-        <div class="container-fluid py-6" id="about">
+        <!-- Who We Serve Start -->
+        <section class="container-fluid py-6 bg-light" id="who-we-serve" aria-labelledby="who-title">
+            <div class="container">
+                <div class="section-intro text-center wow bounceInUp" data-wow-delay="0.1s">
+                    <p class="section-eyebrow">Who We Work With</p>
+                    <h2 id="who-title" class="display-5 mb-3">One Team For Every Side Of The <span class="text-primary">Creator Business</span></h2>
+                    <p class="section-lead mx-auto">Whether you create, run an agency, want to join our team or build with us &mdash; start here.</p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6 wow bounceInUp" data-wow-delay="0.1s">
+                        <article class="audience-card">
+                            <div class="audience-media">{{img:aud-creators}}<span class="audience-badge"><i class="fas fa-star"></i></span></div>
+                            <div class="audience-body">
+                                <p class="audience-kicker">For Creators</p>
+                                <h3 class="h4">Grow your page, keep your freedom</h3>
+                                <p>Management, marketing and 24/7 fan engagement for OnlyFans creators. You always own your account.</p>
+                                <a href="creators.html" class="audience-link stretched-link">Explore creator management <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow bounceInUp" data-wow-delay="0.3s">
+                        <article class="audience-card">
+                            <div class="audience-media">{{img:aud-agencies}}<span class="audience-badge"><i class="fas fa-building"></i></span></div>
+                            <div class="audience-body">
+                                <p class="audience-kicker">For Agencies</p>
+                                <h3 class="h4">Scale without the headaches</h3>
+                                <p>Trained chatters, traffic and back-office support that plug into your agency and grow with your roster.</p>
+                                <a href="agencies.html" class="audience-link stretched-link">See agency services <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow bounceInUp" data-wow-delay="0.5s">
+                        <article class="audience-card">
+                            <div class="audience-media">{{img:aud-careers}}<span class="audience-badge"><i class="fas fa-briefcase"></i></span></div>
+                            <div class="audience-body">
+                                <p class="audience-kicker">Careers</p>
+                                <h3 class="h4">Join our remote team</h3>
+                                <p>Roles for chatters, traffic specialists and social media talent. Flexible hours and real training.</p>
+                                <a href="careers.html" class="audience-link stretched-link">View open roles <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow bounceInUp" data-wow-delay="0.1s">
+                        <article class="audience-card">
+                            <div class="audience-media">{{img:aud-partners}}<span class="audience-badge"><i class="fas fa-handshake"></i></span></div>
+                            <div class="audience-body">
+                                <p class="audience-kicker">Partnerships</p>
+                                <h3 class="h4">Build something together</h3>
+                                <p>Brands, platforms, studios and promoters: let's create partnerships that benefit creators.</p>
+                                <a href="partnerships.html" class="audience-link stretched-link">Partner with us <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow bounceInUp" data-wow-delay="0.3s">
+                        <article class="audience-card">
+                            <div class="audience-media">{{img:aud-investors}}<span class="audience-badge"><i class="fas fa-chart-pie"></i></span></div>
+                            <div class="audience-body">
+                                <p class="audience-kicker">Investors</p>
+                                <h3 class="h4">Invest in the creator economy</h3>
+                                <p>Learn how OuraNoir is building a diversified creator management business.</p>
+                                <a href="investors.html" class="audience-link stretched-link">Investor information <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Who We Serve End -->
+
+
+        <!-- What We Do Start -->
+        <section class="container-fluid py-6" aria-labelledby="what-title">
+            <div class="container">
+                <div class="section-intro text-center wow bounceInUp" data-wow-delay="0.1s">
+                    <p class="section-eyebrow">What We Do</p>
+                    <h2 id="what-title" class="display-5 mb-3">Built For <span class="text-primary">Creators</span> Who Want More</h2>
+                    <p class="section-lead mx-auto">The business side of being a creator, handled by specialists.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow bounceInUp" data-wow-delay="0.1s">
+                        <div class="feature-tile">
+                            <span class="feature-icon"><i class="fas fa-chart-line"></i></span>
+                            <h3 class="h5">Revenue Optimization</h3>
+                            <p class="mb-0">Pricing, bundles and upsells that make every subscriber count.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow bounceInUp" data-wow-delay="0.3s">
+                        <div class="feature-tile">
+                            <span class="feature-icon"><i class="fas fa-bullhorn"></i></span>
+                            <h3 class="h5">Marketing &amp; Growth</h3>
+                            <p class="mb-0">Cross-platform promotion and traffic that compounds over time.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow bounceInUp" data-wow-delay="0.5s">
+                        <div class="feature-tile">
+                            <span class="feature-icon"><i class="fas fa-comments"></i></span>
+                            <h3 class="h5">24/7 Fan Engagement</h3>
+                            <p class="mb-0">Trained chatters who build loyal, long-term fans in your voice.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow bounceInUp" data-wow-delay="0.7s">
+                        <div class="feature-tile">
+                            <span class="feature-icon"><i class="fas fa-user-shield"></i></span>
+                            <h3 class="h5">Privacy &amp; Protection</h3>
+                            <p class="mb-0">Leak monitoring, takedowns and identity protection from day one.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="service.html" class="btn btn-outline-dark rounded-pill py-3 px-5">See All Services <i class="fas fa-arrow-right ps-2"></i></a>
+                </div>
+            </div>
+        </section>
+        <!-- What We Do End -->
+
+
+        <!-- Why Us Start -->
+        <section class="container-fluid py-6 bg-light" aria-labelledby="why-title">
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-5 wow bounceInUp" data-wow-delay="0.1s">
-                        <div class="row g-4">
-                            <div class="col-6">
-                                <div class="about-tile">
-                                    <i class="fas fa-crown"></i>
-                                    <p class="h5 mb-1">Your Brand</p>
-                                    <p class="mb-0 small">Positioned to stand out</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="about-tile about-tile-dark">
-                                    <i class="fas fa-key"></i>
-                                    <p class="h5 mb-1 text-white">Your Account</p>
-                                    <p class="mb-0 small">You always keep ownership</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="about-tile about-tile-dark">
-                                    <i class="fas fa-camera"></i>
-                                    <p class="h5 mb-1 text-white">Your Content</p>
-                                    <p class="mb-0 small">You decide what you share</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="about-tile">
-                                    <i class="fas fa-handshake"></i>
-                                    <p class="h5 mb-1">Our Team</p>
-                                    <p class="mb-0 small">Behind you every day</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.1s">
+                        <div class="framed-photo">{{img:page-contact}}</div>
                     </div>
-                    <div class="col-lg-7 wow bounceInUp" data-wow-delay="0.3s">
-                        <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">About Us</small>
-                        <h2 class="display-5 mb-4">A Management Team Built Around Creators</h2>
-                        <p class="mb-4">Running a successful page is a full-time business: content planning, marketing, pricing, messaging fans and protecting your privacy. OuraNoir gives you a dedicated team that takes care of the business side, with a clear plan built around your goals and your boundaries.</p>
-                        <div class="row g-4 text-dark mb-5">
-                            <div class="col-sm-6">
-                                <i class="fas fa-check-circle text-primary me-2"></i>Dedicated account manager
-                            </div>
-                            <div class="col-sm-6">
-                                <i class="fas fa-check-circle text-primary me-2"></i>Personal growth strategy
-                            </div>
-                            <div class="col-sm-6">
-                                <i class="fas fa-check-circle text-primary me-2"></i>You set your own boundaries
-                            </div>
-                            <div class="col-sm-6">
-                                <i class="fas fa-check-circle text-primary me-2"></i>Confidential &amp; discreet
-                            </div>
-                        </div>
-                        <a href="service.html" class="btn btn-outline-dark py-3 px-5 rounded-pill">Explore Our Services<i class="fas fa-arrow-right ps-2"></i></a>
+                    <div class="col-lg-6 wow bounceInUp" data-wow-delay="0.3s">
+                        <p class="section-eyebrow">Why OuraNoir</p>
+                        <h2 id="why-title" class="display-5 mb-4">A Team Built On <span class="text-primary">Trust</span></h2>
+                        <ul class="check-list">
+                            <li><i class="fas fa-key"></i><span><strong>You own everything.</strong> Your account, your content and your brand always stay yours.</span></li>
+                            <li><i class="fas fa-user-check"></i><span><strong>Reviewed personally.</strong> Every application is read by a real person &mdash; no bots, no templates.</span></li>
+                            <li><i class="fas fa-balance-scale"></i><span><strong>Clear terms.</strong> Agreed up front, with regular reports so there are no surprises.</span></li>
+                            <li><i class="fas fa-lock"></i><span><strong>Discreet by default.</strong> Your identity and data are protected at every step.</span></li>
+                        </ul>
+                        <a href="about.html" class="btn btn-outline-dark rounded-pill py-3 px-5 mt-2">About OuraNoir <i class="fas fa-arrow-right ps-2"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- About End -->
-
-
-        <!-- Service Start -->
-        <div class="container-fluid service py-6" id="services">
-            <div class="container">
-                <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
-                    <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Services</small>
-                    <h2 class="display-5 mb-5">Built For <span class="text-primary">Creators</span> Who Want More</h2>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.1s">
-                        <div class="bg-light rounded service-item">
-                            <div class="service-content d-flex align-items-center justify-content-center p-4">
-                                <div class="service-content-icon text-center">
-                                    <i class="fas fa-user-tie fa-5x text-primary mb-4"></i>
-                                    <h3 class="h4 mb-3">Revenue Optimization</h3>
-                                    <p class="mb-0">Strategic pricing, bundles and upsells that make the most of every subscriber interaction.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.3s">
-                        <div class="bg-light rounded service-item">
-                            <div class="service-content d-flex align-items-center justify-content-center p-4">
-                                <div class="service-content-icon text-center">
-                                    <i class="fas fa-lightbulb fa-5x text-primary mb-4"></i>
-                                    <h3 class="h4 mb-3">Content Strategy</h3>
-                                    <p class="mb-0">Custom content calendars and creative direction that keep your audience engaged &mdash; always within your limits.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.5s">
-                        <div class="bg-light rounded service-item">
-                            <div class="service-content d-flex align-items-center justify-content-center p-4">
-                                <div class="service-content-icon text-center">
-                                    <i class="fas fa-comments fa-5x text-primary mb-4"></i>
-                                    <h3 class="h4 mb-3">Fan Engagement</h3>
-                                    <p class="mb-0">Round-the-clock messaging that builds loyal fans and keeps subscribers coming back.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.7s">
-                        <div class="bg-light rounded service-item">
-                            <div class="service-content d-flex align-items-center justify-content-center p-4">
-                                <div class="service-content-icon text-center">
-                                    <i class="fas fa-hashtag fa-5x text-primary mb-4"></i>
-                                    <h3 class="h4 mb-3">Social Media Growth</h3>
-                                    <p class="mb-0">Growing your Instagram, TikTok, X and Reddit presence to drive new subscribers.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.1s">
-                        <div class="bg-light rounded service-item">
-                            <div class="service-content d-flex align-items-center justify-content-center p-4">
-                                <div class="service-content-icon text-center">
-                                    <i class="fas fa-bullhorn fa-5x text-primary mb-4"></i>
-                                    <h3 class="h4 mb-3">Promotion &amp; Marketing</h3>
-                                    <p class="mb-0">Cross-platform promotion, audience targeting and retention strategies that compound over time.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.3s">
-                        <div class="bg-light rounded service-item">
-                            <div class="service-content d-flex align-items-center justify-content-center p-4">
-                                <div class="service-content-icon text-center">
-                                    <i class="fas fa-gem fa-5x text-primary mb-4"></i>
-                                    <h3 class="h4 mb-3">Branding</h3>
-                                    <p class="mb-0">A clear persona, bio and visual style that make your page instantly recognisable.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.5s">
-                        <div class="bg-light rounded service-item">
-                            <div class="service-content d-flex align-items-center justify-content-center p-4">
-                                <div class="service-content-icon text-center">
-                                    <i class="fas fa-user-shield fa-5x text-primary mb-4"></i>
-                                    <h3 class="h4 mb-3">Privacy &amp; Protection</h3>
-                                    <p class="mb-0">Leak monitoring, takedown requests and guidance on keeping your identity safe.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.7s">
-                        <div class="bg-light rounded service-item">
-                            <div class="service-content d-flex align-items-center justify-content-center p-4">
-                                <div class="service-content-icon text-center">
-                                    <i class="fas fa-chart-pie fa-5x text-primary mb-4"></i>
-                                    <h3 class="h4 mb-3">Analytics &amp; Reporting</h3>
-                                    <p class="mb-0">Regular reports on earnings, growth and what's working, so you always know where you stand.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
-
-
-        <!-- Process Start -->
-        <div class="container-fluid py-6" id="process">
-            <div class="container">
-                <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
-                    <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">How It Works</small>
-                    <h2 class="display-5 mb-5">From Application To Growth In 4 Steps</h2>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.1s">
-                        <div class="step-item">
-                            <span class="step-number" data-step="01" aria-hidden="true"></span>
-                            <i class="fas fa-file-signature fa-3x text-primary mb-4"></i>
-                            <h3 class="h4 mb-3">Apply Online</h3>
-                            <p class="mb-0">Tell us about your content and goals in a 5-minute form. We review every application personally &mdash; no bots, no templates.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.3s">
-                        <div class="step-item">
-                            <span class="step-number" data-step="02" aria-hidden="true"></span>
-                            <i class="fas fa-phone-alt fa-3x text-primary mb-4"></i>
-                            <h3 class="h4 mb-3">Intro Call</h3>
-                            <p class="mb-0">If it's a good fit, we'll contact you to talk about your goals, boundaries and how we work.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.5s">
-                        <div class="step-item">
-                            <span class="step-number" data-step="03" aria-hidden="true"></span>
-                            <i class="fas fa-map-signs fa-3x text-primary mb-4"></i>
-                            <h3 class="h4 mb-3">We Build Your Strategy</h3>
-                            <p class="mb-0">A custom growth plan &mdash; content calendar, pricing and audience targeting &mdash; tailored to you.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.7s">
-                        <div class="step-item">
-                            <span class="step-number" data-step="04" aria-hidden="true"></span>
-                            <i class="fas fa-rocket fa-3x text-primary mb-4"></i>
-                            <h3 class="h4 mb-3">You Grow</h3>
-                            <p class="mb-0">We execute, you create. Your audience and earnings grow while we handle the rest, with regular reports on progress.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-5 wow bounceInUp" data-wow-delay="0.1s">
-                    <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill">Start Your Application <i class="fas fa-arrow-right ps-2"></i></a>
-                </div>
-            </div>
-        </div>
-        <!-- Process End -->
-
-
-        <!-- FAQ Start -->
-        <div class="container-fluid py-6 bg-light" id="faq">
-            <div class="container">
-                <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
-                    <small class="d-inline-block fw-bold text-dark text-uppercase bg-white border border-primary rounded-pill px-4 py-1 mb-3">FAQ</small>
-                    <h2 class="display-5 mb-5">Questions Creators Ask Us</h2>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-lg-9 wow bounceInUp" data-wow-delay="0.2s">
-                        <div class="faq-list">
-                            <details class="faq-item" open>
-                                <summary>Who can apply?</summary>
-                                <div class="faq-body">
-                                    Anyone aged 18 or over with a valid government-issued ID. Whether you're just starting out or already have an established page, we'd like to hear from you.
-                                </div>
-                            </details>
-                            <details class="faq-item">
-                                <summary>Do I need a large following to join?</summary>
-                                <div class="faq-body">
-                                    No. We work with new creators as well as experienced ones. Building an audience is part of what we do.
-                                </div>
-                            </details>
-                            <details class="faq-item">
-                                <summary>Do I keep ownership of my account and content?</summary>
-                                <div class="faq-body">
-                                    Yes. Your account and your content always belong to you. You decide what you create and what your boundaries are.
-                                </div>
-                            </details>
-                            <details class="faq-item">
-                                <summary>How does OuraNoir get paid?</summary>
-                                <div class="faq-body">
-                                    <!-- TODO: replace with your real commission terms -->
-                                        We work on a commission basis that is agreed with you up front and set out in your contract, so we only do well when you do. We'll go through the details on your intro call.
-                                </div>
-                            </details>
-                            <details class="faq-item">
-                                <summary>Is my application kept private?</summary>
-                                <div class="faq-body">
-                                    Yes. Your details, photos and ID are only used to review your application and verify your age, and are never shared publicly.
-                                </div>
-                            </details>
-                            <details class="faq-item">
-                                <summary>How soon will I hear back?</summary>
-                                <div class="faq-body">
-                                    We review every application and aim to reply by email within 2&ndash;3 business days.
-                                </div>
-                            </details>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- FAQ End -->
+        </section>
+        <!-- Why Us End -->
 
 
         <!-- Call To Action Start -->
@@ -322,6 +179,7 @@
                 <h2 class="display-4 text-white mb-4">Ready To <span class="text-primary">Grow?</span></h2>
                 <p class="fs-5 text-white-50 mb-5">We only take on creators we believe in. If you're serious about scaling, apply today &mdash; it's free, confidential and takes about 5 minutes.</p>
                 <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill fs-5">Start Your Application <i class="fas fa-arrow-right ps-2"></i></a>
+                <p class="mt-4 mb-0 text-white-50">Hiring or partnering? <a href="careers.html">See careers</a> &middot; <a href="partnerships.html">Partnerships</a> &middot; <a href="agencies.html">For agencies</a></p>
             </div>
         </div>
         <!-- Call To Action End -->

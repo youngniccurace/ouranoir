@@ -7,7 +7,10 @@ React application form, with small PHP handlers for the forms.
 
 | Path | What it is |
 | --- | --- |
-| `index.html`, `about.html`, `service.html`, `contact.html`, `privacy.html`, `terms.html`, `404.html` | **Generated** pages - edit `tools/content/*.html` + `tools/build_pages.py`, then rebuild. |
+| `index.html` (hub), `creators.html`, `agencies.html`, `careers.html`, `partnerships.html`, `investors.html`, `about.html`, `service.html`, `contact.html`, `privacy.html`, `terms.html`, `404.html` | **Generated** pages - edit `tools/content/*.html` + `tools/build_pages.py`, then rebuild. |
+| `enquiry.php` | Form handler for the Agencies, Careers, Partnerships and Investors forms (one schema per form). |
+| `img/stock/` | **Temporary** Unsplash photos (`CREDITS.md`). Replace with your own photos using the same file names; the list and alt text live in `tools/stock-photos.txt`. |
+| `js/theme.js` | Dark mode (saved choice or device setting) and colour-palette previews. |
 | `tools/content/` | The body content of each page. |
 | `tools/build_pages.py` | Wraps content in the shared head (meta, Open Graph/Twitter, favicons), navbar and footer; writes `sitemap.xml`, `robots.txt`, `site.webmanifest`. **Site settings (domain, email, social links) are at the top.** |
 | `tools/build-assets.mjs` | Self-hosted fonts, SVG icon sprite, trimmed Bootstrap, bundled `css/site.min.css`, minified `js/site.min.js` / `js/forms.min.js`. |
@@ -52,6 +55,19 @@ cd tools && npm run serve    # http://127.0.0.1:8000 (needs PHP 8)
 
 Upload everything **except** `fan-form-flow/`, `tools/`, `scss/`, `deploy/` and any `node_modules/`
 (they are also blocked by `.htaccess` if uploaded by mistake). The host needs PHP 8 with `fileinfo`.
+
+## Dark mode and colour palettes
+
+- Visitors can switch light/dark with the moon/sun button; otherwise the device setting is used.
+- Colour prototypes can be previewed on any page with `?palette=gold` (default), `?palette=blue`,
+  `?palette=pink` or `?palette=spectrum` (remembered for that browser tab only).
+  To adopt one permanently, change `DEFAULT_PALETTE` in `js/theme.js`, then run the build.
+  The palette colours are the `[data-palette=...]` blocks in `css/style.css`.
+
+## Replacing the stock photos
+
+Save your photo over the matching file in `img/stock/` (keep the name and both sizes, e.g.
+`aud-creators-480.webp` and `aud-creators-960.webp`), and update its alt text in `tools/stock-photos.txt`.
 
 ## Third-party services (easy to swap)
 

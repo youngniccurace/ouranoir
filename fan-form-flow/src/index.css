@@ -96,3 +96,35 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Dark mode: follows the main site's choice (../js/theme.js adds .dark to <html>) */
+.dark {
+  color-scheme: dark;
+  --background: 216 18% 5%;
+  --foreground: 30 20% 94%;
+  --card: 216 17% 10%;
+  --card-foreground: 30 20% 94%;
+  --popover: 216 17% 10%;
+  --popover-foreground: 30 20% 94%;
+  --muted: 216 14% 15%;
+  --muted-foreground: 213 10% 75%;
+  --accent: 216 14% 15%;
+  --accent-foreground: 30 20% 94%;
+  --border: 0 0% 100% / 0.12;
+  --input: 36 40% 55% / 0.6;
+}
+.dark body { color: #D9DDE2; }
+.dark .bg-light { background-color: #0B0D10; }
+.dark .text-dark, .dark h1, .dark h2, .dark h3, .dark h4, .dark .text-gray-900 { color: #F4F1EC; }
+.dark .text-secondary, .dark .text-gray-600, .dark .text-gray-700 { color: #B9C0C8; }
+.dark .text-primary { color: #E2BD85; }
+.dark .bg-white, .dark .bg-gray-50, .dark .bg-gray-100 { background-color: #151920; }
+.dark .text-gray-600.bg-gray-100 { color: #B9C0C8; }
+.dark input, .dark textarea, .dark button[role="combobox"] { background-color: #0B0D10; color: #F4F1EC; }
+.dark .form-shadow { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 12px 40px rgba(0,0,0,.5); }
+.dark [class*="text-[#8F6526]"] { color: #E2BD85; }
+.dark [class*="border-[#8F6526]"] { border-color: #E2BD85; }
+.dark [class*="text-[#B02A37]"] { color: #FF8A95; }
+.dark [class*="bg-[#FDECEE]"] { background-color: #3A1519; }
+.dark [class*="text-[#7A1D27]"] { color: #FFB3BB; }
+.dark :focus-visible { outline-color: #FFFFFF; }

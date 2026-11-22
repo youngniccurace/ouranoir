@@ -3,91 +3,102 @@
 
     <head>
         <meta charset="utf-8">
-        <title>OuraNoir - OnlyFans Management Agency for Creators</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="OnlyFans agency, OnlyFans management, creator management, content creator agency, fan engagement, OuraNoir" name="keywords">
-        <meta content="OuraNoir is a full-service OnlyFans management agency. We handle strategy, promotion, fan engagement and privacy so you can focus on creating. Apply in 5 minutes." name="description">
-        <meta property="og:title" content="OuraNoir - OnlyFans Management Agency">
-        <meta property="og:description" content="Strategy, promotion, fan engagement and privacy protection for creators. Apply in 5 minutes.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>OuraNoir | OnlyFans Management Agency for Creators</title>
+        <meta name="description" content="OuraNoir is a full-service OnlyFans management agency. We handle strategy, promotion, fan engagement and privacy so you can focus on creating. Apply in 5 minutes.">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#050709">
+        <link rel="canonical" href="https://www.example.com/">
+        <meta property="og:url" content="https://www.example.com/">
+
+        <!-- Open Graph / social preview -->
         <meta property="og:type" content="website">
+        <meta property="og:site_name" content="OuraNoir">
+        <meta property="og:locale" content="en_GB">
+        <meta property="og:title" content="OuraNoir | OnlyFans Management Agency for Creators">
+        <meta property="og:description" content="OuraNoir is a full-service OnlyFans management agency. We handle strategy, promotion, fan engagement and privacy so you can focus on creating. Apply in 5 minutes.">
+        <meta property="og:image" content="https://www.example.com/img/og-image.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="OuraNoir - OnlyFans management agency. You create. We grow your brand.">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="OuraNoir | OnlyFans Management Agency for Creators">
+        <meta name="twitter:description" content="OuraNoir is a full-service OnlyFans management agency. We handle strategy, promotion, fan engagement and privacy so you can focus on creating. Apply in 5 minutes.">
+        <meta name="twitter:image" content="https://www.example.com/img/og-image.jpg">
+        <meta name="twitter:image:alt" content="OuraNoir - OnlyFans management agency. You create. We grow your brand.">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap" rel="stylesheet">
+        <!-- Favicons -->
+        <link rel="icon" href="favicon.ico" sizes="48x48">
+        <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+        <link rel="manifest" href="site.webmanifest">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Self-hosted fonts and styles (no third-party requests before consent) -->
+        <link rel="preload" href="fonts/playball-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="fonts/open-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="css/site.min.css?v=5619045732">
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <script src="js/site-config.js?v=b057605cb9" defer></script>
+        <script src="js/site.min.js?v=daf42c12bf" defer></script>
+        <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "OuraNoir", "url": "https://www.example.com/", "logo": "https://www.example.com/img/icon-512.png", "email": "hello@example.com", "description": "OuraNoir is a full-service OnlyFans management agency. We handle strategy, promotion, fan engagement and privacy so you can focus on creating. Apply in 5 minutes.", "sameAs": []}</script>
     </head>
 
     <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
-
+        <a class="skip-link" href="#main">Skip to main content</a>
 
         <!-- Navbar start -->
-        <div class="container-fluid nav-bar">
+        <header class="container-fluid nav-bar">
             <div class="container">
-                <nav class="navbar navbar-light navbar-expand-lg py-4">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="text-primary fw-bold mb-0">Oura<span class="text-dark">Noir</span> </h1>
+                <nav class="navbar navbar-light navbar-expand-lg py-4" aria-label="Main">
+                    <a href="index.html" class="navbar-brand" aria-label="OuraNoir home">
+                        <span class="brand-logo text-primary fw-bold">Oura<span class="text-dark">Noir</span></span>
                     </a>
-                    <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
-                        <span class="fa fa-bars text-primary"></span>
+                    <button class="navbar-toggler py-2 px-3" type="button" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg class="icon text-primary" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-bars"></use></svg>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
+                            <a href="index.html" class="nav-item nav-link active" aria-current="page">Home</a>
                             <a href="about.html" class="nav-item nav-link">About</a>
                             <a href="service.html" class="nav-item nav-link">Services</a>
                             <a href="index.html#process" class="nav-item nav-link">How It Works</a>
                             <a href="index.html#faq" class="nav-item nav-link">FAQ</a>
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
-                        <a href="apply/" class="btn btn-primary py-2 px-4 rounded-pill">Apply Now</a>
+                        <a href="apply/" class="btn btn-primary py-2 px-4 rounded-pill nav-cta">Apply Now</a>
                     </div>
                 </nav>
             </div>
-        </div>
+        </header>
         <!-- Navbar End -->
 
+        <main id="main" tabindex="-1">
 
         <!-- Hero Start -->
         <div class="container-fluid bg-light py-6 my-6 mt-0">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-7 col-md-12">
-                        <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-4 animated bounceInDown">OnlyFans Management Agency</small>
-                        <h1 class="display-1 mb-4 animated bounceInDown">You Create. <span class="text-primary">We Grow</span> Your Brand.</h1>
-                        <p class="fs-5 mb-5 animated bounceInDown">OuraNoir handles the strategy, promotion and fan engagement behind your page &mdash; so you can focus on creating, while keeping full ownership of your account and your content.</p>
-                        <a href="apply/" class="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-3 mb-3 animated bounceInLeft">Apply Now <i class="fas fa-arrow-right ps-2"></i></a>
-                        <a href="#process" class="btn btn-outline-dark rounded-pill py-3 px-4 px-md-5 mb-3 animated bounceInLeft">How It Works</a>
-                        <p class="small text-muted mt-2 mb-0 animated bounceInLeft"><i class="fas fa-lock text-primary me-2"></i>18+ only &middot; Applications are confidential &middot; Takes about 5 minutes</p>
+                        <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-4">OnlyFans Management Agency</small>
+                        <h1 class="display-1 mb-4">You Create. <span class="text-primary">We Grow</span> Your Brand.</h1>
+                        <p class="fs-5 mb-5">OuraNoir handles the strategy, promotion and fan engagement behind your page &mdash; so you can focus on creating, while keeping full ownership of your account and your content.</p>
+                        <div class="hero-actions">
+                            <a href="apply/" class="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-3 mb-3">Start Your Application <svg class="icon ps-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-arrow-right"></use></svg></a>
+                            <a href="#process" class="btn btn-outline-dark rounded-pill py-3 px-4 px-md-5 mb-3">See How It Works</a>
+                        </div>
+                        <p class="small text-muted mt-2 mb-0"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-lock"></use></svg>18+ only &middot; Applications are confidential &middot; Takes about 5 minutes</p>
                     </div>
                     <div class="col-lg-5 col-md-12">
                         <!-- Decorative brand card (no stock photos). Replace with an agency photo if you like. -->
-                        <div class="noir-card animated zoomIn">
+                        <div class="noir-card">
                             <div class="noir-monogram">ON</div>
                             <p class="noir-tagline">Elite creator management</p>
                             <ul class="noir-list list-unstyled mb-0">
-                                <li><i class="fas fa-chart-line"></i>Growth strategy</li>
-                                <li><i class="fas fa-bullhorn"></i>Promotion &amp; marketing</li>
-                                <li><i class="fas fa-comments"></i>24/7 fan engagement</li>
-                                <li><i class="fas fa-user-shield"></i>Privacy &amp; leak protection</li>
+                                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-chart-line"></use></svg>Growth strategy</li>
+                                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-bullhorn"></use></svg>Promotion &amp; marketing</li>
+                                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-comments"></use></svg>24/7 fan engagement</li>
+                                <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-user-shield"></use></svg>Privacy &amp; leak protection</li>
                             </ul>
                         </div>
                     </div>
@@ -101,57 +112,57 @@
         <div class="container-fluid py-6 pt-0" id="about">
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-5 wow bounceInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-5 reveal" data-reveal-delay="0.1s">
                         <div class="row g-4">
                             <div class="col-6">
                                 <div class="about-tile">
-                                    <i class="fas fa-crown"></i>
-                                    <h5 class="mb-1">Your Brand</h5>
+                                    <svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-crown"></use></svg>
+                                    <p class="h5 mb-1">Your Brand</p>
                                     <p class="mb-0 small">Positioned to stand out</p>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="about-tile about-tile-dark">
-                                    <i class="fas fa-key"></i>
-                                    <h5 class="mb-1 text-white">Your Account</h5>
+                                    <svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-key"></use></svg>
+                                    <p class="h5 mb-1 text-white">Your Account</p>
                                     <p class="mb-0 small">You always keep ownership</p>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="about-tile about-tile-dark">
-                                    <i class="fas fa-camera"></i>
-                                    <h5 class="mb-1 text-white">Your Content</h5>
+                                    <svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-camera"></use></svg>
+                                    <p class="h5 mb-1 text-white">Your Content</p>
                                     <p class="mb-0 small">You decide what you share</p>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="about-tile">
-                                    <i class="fas fa-handshake"></i>
-                                    <h5 class="mb-1">Our Team</h5>
+                                    <svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-handshake"></use></svg>
+                                    <p class="h5 mb-1">Our Team</p>
                                     <p class="mb-0 small">Behind you every day</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-7 wow bounceInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-7 reveal" data-reveal-delay="0.3s">
                         <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">About Us</small>
-                        <h1 class="display-5 mb-4">A Management Team Built Around Creators</h1>
+                        <h2 class="display-5 mb-4">A Management Team Built Around Creators</h2>
                         <p class="mb-4">Running a successful page is a full-time business: content planning, marketing, pricing, messaging fans and protecting your privacy. OuraNoir gives you a dedicated team that takes care of the business side, with a clear plan built around your goals and your boundaries.</p>
                         <div class="row g-4 text-dark mb-5">
                             <div class="col-sm-6">
-                                <i class="fas fa-check-circle text-primary me-2"></i>Dedicated account manager
+                                <svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-check-circle"></use></svg>Dedicated account manager
                             </div>
                             <div class="col-sm-6">
-                                <i class="fas fa-check-circle text-primary me-2"></i>Personal growth strategy
+                                <svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-check-circle"></use></svg>Personal growth strategy
                             </div>
                             <div class="col-sm-6">
-                                <i class="fas fa-check-circle text-primary me-2"></i>You set your own boundaries
+                                <svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-check-circle"></use></svg>You set your own boundaries
                             </div>
                             <div class="col-sm-6">
-                                <i class="fas fa-check-circle text-primary me-2"></i>Confidential &amp; discreet
+                                <svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-check-circle"></use></svg>Confidential &amp; discreet
                             </div>
                         </div>
-                        <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill">Start Your Application<i class="fas fa-arrow-right ps-2"></i></a>
+                        <a href="service.html" class="btn btn-outline-dark py-3 px-5 rounded-pill">Explore Our Services<svg class="icon ps-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-arrow-right"></use></svg></a>
                     </div>
                 </div>
             </div>
@@ -162,94 +173,94 @@
         <!-- Service Start -->
         <div class="container-fluid service py-6" id="services">
             <div class="container">
-                <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+                <div class="text-center reveal" data-reveal-delay="0.1s">
                     <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Services</small>
-                    <h1 class="display-5 mb-5">Everything Your Page Needs</h1>
+                    <h2 class="display-5 mb-5">Everything Your Page Needs</h2>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-3 col-md-6 col-sm-12 reveal" data-reveal-delay="0.1s">
                         <div class="bg-light rounded service-item">
                             <div class="service-content d-flex align-items-center justify-content-center p-4">
                                 <div class="service-content-icon text-center">
-                                    <i class="fas fa-user-tie fa-5x text-primary mb-4"></i>
-                                    <h4 class="mb-3">Account Management</h4>
+                                    <svg class="icon icon-5x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-user-tie"></use></svg>
+                                    <h3 class="h4 mb-3">Account Management</h3>
                                     <p class="mb-0">Day-to-day running of your page: posting schedule, pricing, bundles and promotions.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-3 col-md-6 col-sm-12 reveal" data-reveal-delay="0.3s">
                         <div class="bg-light rounded service-item">
                             <div class="service-content d-flex align-items-center justify-content-center p-4">
                                 <div class="service-content-icon text-center">
-                                    <i class="fas fa-lightbulb fa-5x text-primary mb-4"></i>
-                                    <h4 class="mb-3">Content Strategy</h4>
+                                    <svg class="icon icon-5x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-lightbulb"></use></svg>
+                                    <h3 class="h4 mb-3">Content Strategy</h3>
                                     <p class="mb-0">Content plans and ideas based on what your audience responds to, within your limits.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.5s">
+                    <div class="col-lg-3 col-md-6 col-sm-12 reveal" data-reveal-delay="0.5s">
                         <div class="bg-light rounded service-item">
                             <div class="service-content d-flex align-items-center justify-content-center p-4">
                                 <div class="service-content-icon text-center">
-                                    <i class="fas fa-comments fa-5x text-primary mb-4"></i>
-                                    <h4 class="mb-3">Fan Engagement</h4>
+                                    <svg class="icon icon-5x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-comments"></use></svg>
+                                    <h3 class="h4 mb-3">Fan Engagement</h3>
                                     <p class="mb-0">Round-the-clock messaging that builds loyal fans and keeps subscribers coming back.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.7s">
+                    <div class="col-lg-3 col-md-6 col-sm-12 reveal" data-reveal-delay="0.7s">
                         <div class="bg-light rounded service-item">
                             <div class="service-content d-flex align-items-center justify-content-center p-4">
                                 <div class="service-content-icon text-center">
-                                    <i class="fas fa-hashtag fa-5x text-primary mb-4"></i>
-                                    <h4 class="mb-3">Social Media Growth</h4>
+                                    <svg class="icon icon-5x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-hashtag"></use></svg>
+                                    <h3 class="h4 mb-3">Social Media Growth</h3>
                                     <p class="mb-0">Growing your Instagram, TikTok, X and Reddit presence to drive new subscribers.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-3 col-md-6 col-sm-12 reveal" data-reveal-delay="0.1s">
                         <div class="bg-light rounded service-item">
                             <div class="service-content d-flex align-items-center justify-content-center p-4">
                                 <div class="service-content-icon text-center">
-                                    <i class="fas fa-bullhorn fa-5x text-primary mb-4"></i>
-                                    <h4 class="mb-3">Promotion &amp; Marketing</h4>
+                                    <svg class="icon icon-5x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-bullhorn"></use></svg>
+                                    <h3 class="h4 mb-3">Promotion &amp; Marketing</h3>
                                     <p class="mb-0">Targeted campaigns and cross-promotion to put your page in front of the right audience.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-3 col-md-6 col-sm-12 reveal" data-reveal-delay="0.3s">
                         <div class="bg-light rounded service-item">
                             <div class="service-content d-flex align-items-center justify-content-center p-4">
                                 <div class="service-content-icon text-center">
-                                    <i class="fas fa-gem fa-5x text-primary mb-4"></i>
-                                    <h4 class="mb-3">Branding</h4>
+                                    <svg class="icon icon-5x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-gem"></use></svg>
+                                    <h3 class="h4 mb-3">Branding</h3>
                                     <p class="mb-0">A clear persona, bio and visual style that make your page instantly recognisable.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.5s">
+                    <div class="col-lg-3 col-md-6 col-sm-12 reveal" data-reveal-delay="0.5s">
                         <div class="bg-light rounded service-item">
                             <div class="service-content d-flex align-items-center justify-content-center p-4">
                                 <div class="service-content-icon text-center">
-                                    <i class="fas fa-user-shield fa-5x text-primary mb-4"></i>
-                                    <h4 class="mb-3">Privacy &amp; Protection</h4>
+                                    <svg class="icon icon-5x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-user-shield"></use></svg>
+                                    <h3 class="h4 mb-3">Privacy &amp; Protection</h3>
                                     <p class="mb-0">Leak monitoring, takedown requests and guidance on keeping your identity safe.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.7s">
+                    <div class="col-lg-3 col-md-6 col-sm-12 reveal" data-reveal-delay="0.7s">
                         <div class="bg-light rounded service-item">
                             <div class="service-content d-flex align-items-center justify-content-center p-4">
                                 <div class="service-content-icon text-center">
-                                    <i class="fas fa-chart-pie fa-5x text-primary mb-4"></i>
-                                    <h4 class="mb-3">Analytics &amp; Reporting</h4>
+                                    <svg class="icon icon-5x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-chart-pie"></use></svg>
+                                    <h3 class="h4 mb-3">Analytics &amp; Reporting</h3>
                                     <p class="mb-0">Regular reports on earnings, growth and what's working, so you always know where you stand.</p>
                                 </div>
                             </div>
@@ -264,46 +275,46 @@
         <!-- Process Start -->
         <div class="container-fluid py-6" id="process">
             <div class="container">
-                <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+                <div class="text-center reveal" data-reveal-delay="0.1s">
                     <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">How It Works</small>
-                    <h1 class="display-5 mb-5">From Application To Growth In 4 Steps</h1>
+                    <h2 class="display-5 mb-5">From Application To Growth In 4 Steps</h2>
                 </div>
                 <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-3 col-md-6 reveal" data-reveal-delay="0.1s">
                         <div class="step-item">
-                            <span class="step-number">01</span>
-                            <i class="fas fa-file-signature fa-3x text-primary mb-4"></i>
-                            <h4 class="mb-3">Apply Online</h4>
+                            <span class="step-number" aria-hidden="true">01</span>
+                            <svg class="icon icon-3x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-file-signature"></use></svg>
+                            <h3 class="h4 mb-3">Apply Online</h3>
                             <p class="mb-0">Fill in our short application form with your details, socials and a few photos. It takes about 5 minutes.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-3 col-md-6 reveal" data-reveal-delay="0.3s">
                         <div class="step-item">
-                            <span class="step-number">02</span>
-                            <i class="fas fa-phone-alt fa-3x text-primary mb-4"></i>
-                            <h4 class="mb-3">Intro Call</h4>
+                            <span class="step-number" aria-hidden="true">02</span>
+                            <svg class="icon icon-3x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-phone-alt"></use></svg>
+                            <h3 class="h4 mb-3">Intro Call</h3>
                             <p class="mb-0">If it's a good fit, we'll contact you to talk about your goals, boundaries and how we work.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.5s">
+                    <div class="col-lg-3 col-md-6 reveal" data-reveal-delay="0.5s">
                         <div class="step-item">
-                            <span class="step-number">03</span>
-                            <i class="fas fa-map-signs fa-3x text-primary mb-4"></i>
-                            <h4 class="mb-3">Your Growth Plan</h4>
+                            <span class="step-number" aria-hidden="true">03</span>
+                            <svg class="icon icon-3x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-map-signs"></use></svg>
+                            <h3 class="h4 mb-3">Your Growth Plan</h3>
                             <p class="mb-0">We build a personal strategy for your brand, content, pricing and promotion.</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.7s">
+                    <div class="col-lg-3 col-md-6 reveal" data-reveal-delay="0.7s">
                         <div class="step-item">
-                            <span class="step-number">04</span>
-                            <i class="fas fa-rocket fa-3x text-primary mb-4"></i>
-                            <h4 class="mb-3">Launch &amp; Grow</h4>
+                            <span class="step-number" aria-hidden="true">04</span>
+                            <svg class="icon icon-3x text-primary mb-4" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-rocket"></use></svg>
+                            <h3 class="h4 mb-3">Launch &amp; Grow</h3>
                             <p class="mb-0">Your team gets to work while you create, with regular check-ins and reports on your progress.</p>
                         </div>
                     </div>
                 </div>
-                <div class="text-center mt-5 wow bounceInUp" data-wow-delay="0.1s">
-                    <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill">Begin Step 1 <i class="fas fa-arrow-right ps-2"></i></a>
+                <div class="text-center mt-5 reveal" data-reveal-delay="0.1s">
+                    <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill">Start Your Application <svg class="icon ps-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-arrow-right"></use></svg></a>
                 </div>
             </div>
         </div>
@@ -313,86 +324,50 @@
         <!-- FAQ Start -->
         <div class="container-fluid py-6 bg-light" id="faq">
             <div class="container">
-                <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
+                <div class="text-center reveal" data-reveal-delay="0.1s">
                     <small class="d-inline-block fw-bold text-dark text-uppercase bg-white border border-primary rounded-pill px-4 py-1 mb-3">FAQ</small>
-                    <h1 class="display-5 mb-5">Questions Creators Ask Us</h1>
+                    <h2 class="display-5 mb-5">Questions Creators Ask Us</h2>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-lg-9 wow bounceInUp" data-wow-delay="0.2s">
-                        <div class="accordion faq-accordion" id="faqAccordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="faqHeading1">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                                        Who can apply?
-                                    </button>
-                                </h2>
-                                <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        Anyone aged 18 or over with a valid government-issued ID. Whether you're just starting out or already have an established page, we'd like to hear from you.
-                                    </div>
+                    <div class="col-lg-9 reveal" data-reveal-delay="0.2s">
+                        <div class="faq-list">
+                            <details class="faq-item" open>
+                                <summary>Who can apply?</summary>
+                                <div class="faq-body">
+                                    Anyone aged 18 or over with a valid government-issued ID. Whether you're just starting out or already have an established page, we'd like to hear from you.
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="faqHeading2">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                                        Do I need a large following to join?
-                                    </button>
-                                </h2>
-                                <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        No. We work with new creators as well as experienced ones. Building an audience is part of what we do.
-                                    </div>
+                            </details>
+                            <details class="faq-item">
+                                <summary>Do I need a large following to join?</summary>
+                                <div class="faq-body">
+                                    No. We work with new creators as well as experienced ones. Building an audience is part of what we do.
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="faqHeading3">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
-                                        Do I keep ownership of my account and content?
-                                    </button>
-                                </h2>
-                                <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        Yes. Your account and your content always belong to you. You decide what you create and what your boundaries are.
-                                    </div>
+                            </details>
+                            <details class="faq-item">
+                                <summary>Do I keep ownership of my account and content?</summary>
+                                <div class="faq-body">
+                                    Yes. Your account and your content always belong to you. You decide what you create and what your boundaries are.
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="faqHeading4">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
-                                        How does OuraNoir get paid?
-                                    </button>
-                                </h2>
-                                <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        <!-- TODO: replace with your real commission terms -->
+                            </details>
+                            <details class="faq-item">
+                                <summary>How does OuraNoir get paid?</summary>
+                                <div class="faq-body">
+                                    <!-- TODO: replace with your real commission terms -->
                                         We work on a commission basis that is agreed with you up front and set out in your contract, so we only do well when you do. We'll go through the details on your intro call.
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="faqHeading5">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
-                                        Is my application kept private?
-                                    </button>
-                                </h2>
-                                <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        Yes. Your details, photos and ID are only used to review your application and verify your age, and are never shared publicly.
-                                    </div>
+                            </details>
+                            <details class="faq-item">
+                                <summary>Is my application kept private?</summary>
+                                <div class="faq-body">
+                                    Yes. Your details, photos and ID are only used to review your application and verify your age, and are never shared publicly.
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="faqHeading6">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
-                                        How soon will I hear back?
-                                    </button>
-                                </h2>
-                                <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
-                                    <div class="accordion-body">
-                                        We review every application and aim to reply by email within 2&ndash;3 business days.
-                                    </div>
+                            </details>
+                            <details class="faq-item">
+                                <summary>How soon will I hear back?</summary>
+                                <div class="faq-body">
+                                    We review every application and aim to reply by email within 2&ndash;3 business days.
                                 </div>
-                            </div>
+                            </details>
                         </div>
                     </div>
                 </div>
@@ -403,53 +378,47 @@
 
         <!-- Call To Action Start -->
         <div class="container-fluid cta-noir py-6">
-            <div class="container text-center wow bounceInUp" data-wow-delay="0.1s">
-                <h1 class="display-4 text-white mb-4">Ready To Take Your Page <span class="text-primary">To The Next Level?</span></h1>
+            <div class="container text-center reveal" data-reveal-delay="0.1s">
+                <h2 class="display-4 text-white mb-4">Ready To Take Your Page <span class="text-primary">To The Next Level?</span></h2>
                 <p class="fs-5 text-white-50 mb-5">Apply today. It's free, confidential and takes about 5 minutes.</p>
-                <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill fs-5">Apply Now <i class="fas fa-arrow-right ps-2"></i></a>
+                <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill fs-5">Start Your Application <svg class="icon ps-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-arrow-right"></use></svg></a>
             </div>
         </div>
         <!-- Call To Action End -->
 
+        </main>
 
         <!-- Footer Start -->
+        <footer>
         <div class="container-fluid footer py-6 mb-0 bg-light">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-item">
-                            <h1 class="text-primary">Oura<span class="text-dark">Noir</span></h1>
+                            <p class="brand-logo text-primary mb-3">Oura<span class="text-dark">Noir</span></p>
                             <p class="lh-lg mb-4">A full-service management agency helping creators grow their brand, their audience and their income &mdash; on their own terms.</p>
-                            <!-- TODO: add your real social media links -->
-                            <div class="footer-icon d-flex">
-                                <a class="btn btn-primary btn-sm-square me-2 rounded-circle" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-primary btn-sm-square me-2 rounded-circle" href="#" aria-label="X / Twitter"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle" href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="footer-item">
-                            <h4 class="mb-4">Quick Links</h4>
-                            <div class="d-flex flex-column align-items-start">
-                                <a class="text-body mb-3" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a>
-                                <a class="text-body mb-3" href="service.html"><i class="fa fa-angle-right text-primary me-2"></i>Services</a>
-                                <a class="text-body mb-3" href="index.html#process"><i class="fa fa-angle-right text-primary me-2"></i>How It Works</a>
-                                <a class="text-body mb-3" href="index.html#faq"><i class="fa fa-angle-right text-primary me-2"></i>FAQ</a>
-                                <a class="text-body mb-3" href="apply/"><i class="fa fa-angle-right text-primary me-2"></i>Apply Now</a>
-                            </div>
-                        </div>
+                        <nav class="footer-item" aria-label="Footer">
+                            <h2 class="h4 mb-4">Quick Links</h2>
+                            <ul class="list-unstyled footer-links mb-0">
+                                <li><a href="about.html"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>About Us</a></li>
+                                <li><a href="service.html"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>Services</a></li>
+                                <li><a href="index.html#process"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>How It Works</a></li>
+                                <li><a href="index.html#faq"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>FAQ</a></li>
+                                <li><a href="apply/"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>Apply Now</a></li>
+                            </ul>
+                        </nav>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-item">
-                            <h4 class="mb-4">Contact Us</h4>
-                            <!-- TODO: replace with your real contact details -->
-                            <div class="d-flex flex-column align-items-start">
-                                <p><i class="fas fa-envelope text-primary me-2"></i> info@example.com</p>
-                                <p><i class="fa fa-clock text-primary me-2"></i> Fan engagement 24/7</p>
-                                <p><i class="fas fa-lock text-primary me-2"></i> All enquiries are confidential</p>
-                                <a href="contact.html" class="btn btn-primary py-2 px-4 rounded-pill">Get In Touch</a>
-                            </div>
+                            <h2 class="h4 mb-4">Contact Us</h2>
+                            <ul class="list-unstyled footer-links mb-4">
+                                <li><a href="mailto:hello@example.com"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-envelope"></use></svg>hello@example.com</a></li>
+                                <li><span class="footer-text"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-lock"></use></svg>All enquiries are confidential</span></li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-outline-dark py-2 px-4 rounded-pill">Send Us A Message</a>
                         </div>
                     </div>
                 </div>
@@ -461,36 +430,29 @@
         <!-- Copyright Start -->
         <div class="container-fluid copyright bg-dark py-4">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <span class="text-light"><i class="fas fa-copyright text-light me-2"></i>OuraNoir. All rights reserved. 18+ only.</span>
+                <div class="row g-3 align-items-center">
+                    <div class="col-lg-5 text-center text-lg-start">
+                        <span class="text-light">&copy; 2026 OuraNoir. All rights reserved. 18+ only.</span>
                     </div>
-                    <div class="col-md-6 my-auto text-center text-md-end text-white">
+                    <div class="col-lg-7 text-center text-lg-end">
+                        <ul class="legal-links list-inline mb-2">
+                            <li class="list-inline-item"><a href="privacy.html">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="terms.html">Terms &amp; Conditions</a></li>
+                            <li class="list-inline-item"><button type="button" class="link-button" data-cookie-settings>Cookie Settings</button></li>
+                        </ul>
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://aquikee.co.ke/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://aquikee.co.ke">Aquikee</a> Distributed By <a class="border-bottom" href="https://aquikee.co.ke">Aquikee Web Solutions</a>
+                        <span class="template-credit">Designed By <a href="https://aquikee.co.ke" rel="noopener">Aquikee</a> Distributed By <a href="https://aquikee.co.ke" rel="noopener">Aquikee Web Solutions</a></span>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Copyright End -->
+        </footer>
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-md-square btn-primary rounded-circle back-to-top" aria-label="Back to top"><i class="fa fa-arrow-up"></i></a>
-
-
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <a href="#main" class="btn btn-md-square btn-primary rounded-circle back-to-top" aria-label="Back to top"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-arrow-up"></use></svg></a>
     </body>
 </html>

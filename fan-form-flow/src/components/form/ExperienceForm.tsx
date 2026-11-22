@@ -1,43 +1,38 @@
-
 import React from 'react';
-import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { FormData } from '@/types/form';
+import type { FieldErrors } from '@/lib/validation';
+import FieldError, { errorProps, Required } from './FieldError';
+import TextField from './TextField';
 
 interface ExperienceFormProps {
   formData: FormData;
   updateFormData: (data: Partial<FormData>) => void;
+  errors: FieldErrors;
 }
 
-const ExperienceForm = ({ formData, updateFormData }: ExperienceFormProps) => {
-  const contentTypes = [
-    "Photos", 
-    "Videos", 
-    "Live Streaming", 
-    "Messaging", 
-    "Custom Content"
-  ];
+const CONTENT_TYPES = ['Photos', 'Videos', 'Live Streaming', 'Messaging', 'Custom Content'];
 
-  const handleContentTypeChange = (type: string) => {
-    const updatedContentTypes = formData.contentTypes.includes(type)
-      ? formData.contentTypes.filter(t => t !== type)
-      : [...formData.contentTypes, type];
-    
-    updateFormData({ contentTypes: updatedContentTypes });
+const ExperienceForm = ({ formData, updateFormData, errors }: ExperienceFormProps) => {
+  const toggleContentType = (type: string) => {
+    updateFormData({
+      contentTypes: formData.contentTypes.includes(type)
+        ? formData.contentTypes.filter((t) => t !== type)
+        : [...formData.contentTypes, type],
+    });
   };
+  const levelErr = errorProps('experienceLevel', errors.experienceLevel);
+  const availErr = errorProps('availability', errors.availability);
 
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor="experienceLevel">Experience Level</Label>
-        <Select 
-          value={formData.experienceLevel} 
-          onValueChange={(value) => updateFormData({ experienceLevel: value })}
-        >
-          <SelectTrigger id="experienceLevel">
+        <Label htmlFor="experienceLevel">Experience Level<Required /></Label>
+        <Select value={formData.experienceLevel} onValueChange={(value) => updateFormData({ experienceLevel: value })}>
+          <SelectTrigger id="experienceLevel" aria-required="true" aria-invalid={levelErr['aria-invalid']}
+            aria-describedby={levelErr['aria-describedby']} className={levelErr.className}>
             <SelectValue placeholder="Select your experience level" />
           </SelectTrigger>
           <SelectContent>
@@ -48,31 +43,32 @@ const ExperienceForm = ({ formData, updateFormData }: ExperienceFormProps) => {
             <SelectItem value="veteran">Veteran (2+ years)</SelectItem>
           </SelectContent>
         </Select>
+        <FieldError id="experienceLevel" message={errors.experienceLevel} />
       </div>
-      
-      <div className="space-y-2">
-        <Label>What type of content are you interested in creating?</Label>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-          {contentTypes.map(type => (
-            <div key={type} className="flex items-center space-x-2">
-              <Checkbox 
-                id={`content-${type}`} 
-                checked={formData.contentTypes.includes(type)} 
-                onCheckedChange={() => handleContentTypeChange(type)} 
+
+      <fieldset className="space-y-2">
+        <legend className="text-sm font-medium leading-none">What type of content are you interested in creating?</legend>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+          {CONTENT_TYPES.map((type) => (
+            <div key={type} className="flex items-center space-x-3 min-h-[44px]">
+              <Checkbox
+                id={`content-${type}`}
+                checked={formData.contentTypes.includes(type)}
+                onCheckedChange={() => toggleContentType(type)}
+                className="h-5 w-5"
               />
-              <Label htmlFor={`content-${type}`} className="cursor-pointer">{type}</Label>
+              <Label htmlFor={`content-${type}`} className="cursor-pointer py-2">{type}</Label>
             </div>
           ))}
         </div>
-      </div>
-      
+        <FieldError id="contentTypes" message={errors.contentTypes} />
+      </fieldset>
+
       <div className="space-y-2">
-        <Label htmlFor="availability">Weekly Availability (hours)</Label>
-        <Select 
-          value={formData.availability} 
-          onValueChange={(value) => updateFormData({ availability: value })}
-        >
-          <SelectTrigger id="availability">
+        <Label htmlFor="availability">Weekly Availability (hours)<Required /></Label>
+        <Select value={formData.availability} onValueChange={(value) => updateFormData({ availability: value })}>
+          <SelectTrigger id="availability" aria-required="true" aria-invalid={availErr['aria-invalid']}
+            aria-describedby={availErr['aria-describedby']} className={availErr.className}>
             <SelectValue placeholder="Select your weekly availability" />
           </SelectTrigger>
           <SelectContent>
@@ -83,18 +79,13 @@ const ExperienceForm = ({ formData, updateFormData }: ExperienceFormProps) => {
             <SelectItem value="30+">30+ hours</SelectItem>
           </SelectContent>
         </Select>
+        <FieldError id="availability" message={errors.availability} />
       </div>
-      
-      <div className="space-y-2">
-        <Label htmlFor="goalsOnPlatform">Your Goals on OnlyFans</Label>
-        <Textarea
-          id="goalsOnPlatform"
-          placeholder="What are you hoping to achieve on OnlyFans? What are your income goals?"
-          className="min-h-24"
-          value={formData.goalsOnPlatform}
-          onChange={(e) => updateFormData({ goalsOnPlatform: e.target.value })}
-        />
-      </div>
+
+      <TextField id="goalsOnPlatform" label="Your Goals on OnlyFans" multiline className="min-h-24" maxLength={2000}
+        placeholder="What are you hoping to achieve on OnlyFans? What are your income goals?"
+        value={formData.goalsOnPlatform} error={errors.goalsOnPlatform}
+        onChange={(v) => updateFormData({ goalsOnPlatform: v })} />
     </div>
   );
 };

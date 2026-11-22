@@ -3,51 +3,59 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Contact - OuraNoir</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="OnlyFans agency, OnlyFans management, creator management, content creator agency, OuraNoir" name="keywords">
-        <meta content="Get in touch with the OuraNoir team. All enquiries are confidential." name="description">
-        <meta property="og:title" content="Contact - OuraNoir">
-        <meta property="og:description" content="Get in touch with the OuraNoir team. All enquiries are confidential.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact OuraNoir | Confidential Enquiries</title>
+        <meta name="description" content="Questions about working with OuraNoir? Send us a confidential message and we&#x27;ll reply within 2-3 business days.">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#050709">
+        <link rel="canonical" href="https://www.example.com/contact.html">
+        <meta property="og:url" content="https://www.example.com/contact.html">
+
+        <!-- Open Graph / social preview -->
         <meta property="og:type" content="website">
+        <meta property="og:site_name" content="OuraNoir">
+        <meta property="og:locale" content="en_GB">
+        <meta property="og:title" content="Contact OuraNoir | Confidential Enquiries">
+        <meta property="og:description" content="Questions about working with OuraNoir? Send us a confidential message and we&#x27;ll reply within 2-3 business days.">
+        <meta property="og:image" content="https://www.example.com/img/og-image.jpg">
+        <meta property="og:image:type" content="image/jpeg">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="OuraNoir - OnlyFans management agency. You create. We grow your brand.">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Contact OuraNoir | Confidential Enquiries">
+        <meta name="twitter:description" content="Questions about working with OuraNoir? Send us a confidential message and we&#x27;ll reply within 2-3 business days.">
+        <meta name="twitter:image" content="https://www.example.com/img/og-image.jpg">
+        <meta name="twitter:image:alt" content="OuraNoir - OnlyFans management agency. You create. We grow your brand.">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap" rel="stylesheet">
+        <!-- Favicons -->
+        <link rel="icon" href="favicon.ico" sizes="48x48">
+        <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+        <link rel="manifest" href="site.webmanifest">
 
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Self-hosted fonts and styles (no third-party requests before consent) -->
+        <link rel="preload" href="fonts/playball-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="fonts/open-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="css/site.min.css?v=5619045732">
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <script src="js/site-config.js?v=b057605cb9" defer></script>
+        <script src="js/site.min.js?v=daf42c12bf" defer></script>
+        <script src="js/forms.min.js?v=25f3846ddd" defer></script>
     </head>
 
     <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
-
+        <a class="skip-link" href="#main">Skip to main content</a>
 
         <!-- Navbar start -->
-        <div class="container-fluid nav-bar">
+        <header class="container-fluid nav-bar">
             <div class="container">
-                <nav class="navbar navbar-light navbar-expand-lg py-4">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="text-primary fw-bold mb-0">Oura<span class="text-dark">Noir</span> </h1>
+                <nav class="navbar navbar-light navbar-expand-lg py-4" aria-label="Main">
+                    <a href="index.html" class="navbar-brand" aria-label="OuraNoir home">
+                        <span class="brand-logo text-primary fw-bold">Oura<span class="text-dark">Noir</span></span>
                     </a>
-                    <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
-                        <span class="fa fa-bars text-primary"></span>
+                    <button class="navbar-toggler py-2 px-3" type="button" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <svg class="icon text-primary" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-bars"></use></svg>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
@@ -56,19 +64,20 @@
                             <a href="service.html" class="nav-item nav-link">Services</a>
                             <a href="index.html#process" class="nav-item nav-link">How It Works</a>
                             <a href="index.html#faq" class="nav-item nav-link">FAQ</a>
-                            <a href="contact.html" class="nav-item nav-link active">Contact</a>
+                            <a href="contact.html" class="nav-item nav-link active" aria-current="page">Contact</a>
                         </div>
-                        <a href="apply/" class="btn btn-primary py-2 px-4 rounded-pill">Apply Now</a>
+                        <a href="apply/" class="btn btn-primary py-2 px-4 rounded-pill nav-cta">Apply Now</a>
                     </div>
                 </nav>
             </div>
-        </div>
+        </header>
         <!-- Navbar End -->
 
+        <main id="main" tabindex="-1">
 
         <!-- Page Header Start -->
         <div class="container-fluid bg-light py-6 my-6 mt-0">
-            <div class="container text-center animated bounceInDown">
+            <div class="container text-center">
                 <h1 class="display-1 mb-4">Contact Us</h1>
                 <p class="fs-5 mb-4 mx-auto" style="max-width: 720px;">Questions about working with us? Send us a message and we'll get back to you.</p>
                 <ol class="breadcrumb justify-content-center mb-0">
@@ -84,78 +93,96 @@
         <div class="container-fluid py-6 pt-0">
             <div class="container">
                 <div class="row g-5">
-                    <div class="col-lg-7 wow bounceInUp" data-wow-delay="0.1s">
+                    <div class="col-lg-7 reveal" data-reveal-delay="0.1s">
                         <div class="p-5 bg-light rounded contact-form">
                             <small class="d-inline-block fw-bold text-dark text-uppercase bg-white border border-primary rounded-pill px-4 py-1 mb-3">Get In Touch</small>
-                            <h1 class="display-5 mb-4">Send Us A Message</h1>
+                            <h2 class="display-5 mb-4">Send Us A Message</h2>
                             <p class="mb-4">Want to join as a creator? The quickest way is our <a href="apply/" class="fw-bold">application form</a>. For anything else, use the form below.</p>
                             <form id="contactForm" action="contact.php" method="post" novalidate>
-                                <!-- Honeypot field: hidden from people, catches spam bots -->
-                                <div class="d-none" aria-hidden="true">
+                                <!-- Spam protection 1: honeypot. Hidden from people (and screen readers); bots fill it in. -->
+                                <div class="hp-field" aria-hidden="true">
                                     <label for="website">Leave this field empty</label>
                                     <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                                 </div>
+                                <!-- Spam protection 2: time trap. Filled in by js/forms.js; submissions made too quickly are rejected. -->
+                                <input type="hidden" name="form_started" value="">
                                 <div class="row g-3">
                                     <div class="col-md-6">
-                                        <label for="name" class="form-label text-dark">Your Name</label>
-                                        <input type="text" id="name" name="name" class="form-control p-3 border-primary bg-white" placeholder="Your name" maxlength="100" required>
+                                        <label for="name" class="form-label text-dark">Your Name <span class="text-danger" aria-hidden="true">*</span></label>
+                                        <input type="text" id="name" name="name" class="form-control p-3 border-primary bg-white" placeholder="Your name" autocomplete="name" minlength="2" maxlength="100" required aria-describedby="name-error">
+                                        <div class="invalid-feedback" id="name-error" data-msg-required="Please enter your name." data-msg-short="Your name must be at least 2 characters."></div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="email" class="form-label text-dark">Your Email</label>
-                                        <input type="email" id="email" name="email" class="form-control p-3 border-primary bg-white" placeholder="you@example.com" maxlength="254" required>
+                                        <label for="email" class="form-label text-dark">Your Email <span class="text-danger" aria-hidden="true">*</span></label>
+                                        <input type="email" id="email" name="email" class="form-control p-3 border-primary bg-white" placeholder="you@example.com" autocomplete="email" maxlength="254" required aria-describedby="email-error">
+                                        <div class="invalid-feedback" id="email-error" data-msg-required="Please enter your email address." data-msg-type="Please enter a valid email address, like name@example.com."></div>
                                     </div>
                                     <div class="col-12">
                                         <label for="subject" class="form-label text-dark">Subject</label>
-                                        <select id="subject" name="subject" class="form-select p-3 border-primary bg-white">
+                                        <select id="subject" name="subject" class="form-select p-3 border-primary bg-white" aria-describedby="subject-error">
                                             <option>General question</option>
                                             <option>Joining as a creator</option>
                                             <option>I'm already a creator with OuraNoir</option>
                                             <option>Business / partnership enquiry</option>
                                             <option>Other</option>
                                         </select>
+                                        <div class="invalid-feedback" id="subject-error"></div>
                                     </div>
                                     <div class="col-12">
-                                        <label for="message" class="form-label text-dark">Message</label>
-                                        <textarea id="message" name="message" class="form-control p-3 border-primary bg-white" rows="5" placeholder="How can we help?" maxlength="5000" required></textarea>
+                                        <label for="message" class="form-label text-dark">Message <span class="text-danger" aria-hidden="true">*</span></label>
+                                        <textarea id="message" name="message" class="form-control p-3 border-primary bg-white" rows="5" placeholder="How can we help?" minlength="10" maxlength="5000" required aria-describedby="message-error"></textarea>
+                                        <div class="invalid-feedback" id="message-error" data-msg-required="Please enter your message." data-msg-short="Please write a little more (at least 10 characters)."></div>
                                     </div>
                                     <div class="col-12">
-                                        <div id="contactStatus" class="alert d-none mb-0" role="status"></div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="privacy" name="privacy" value="yes" required aria-describedby="privacy-error">
+                                            <label class="form-check-label" for="privacy">I agree that OuraNoir may use these details to reply to my message, as described in the <a href="privacy.html">Privacy Policy</a>. <span class="text-danger" aria-hidden="true">*</span></label>
+                                            <div class="invalid-feedback" id="privacy-error" data-msg-required="Please confirm you've read the Privacy Policy."></div>
+                                        </div>
+                                    </div>
+                                    <!-- Spam protection 3: Cloudflare Turnstile. Only shown when a site key is set in js/site-config.js -->
+                                    <div class="col-12">
+                                        <div class="turnstile-slot" data-turnstile></div>
+                                        <div class="invalid-feedback d-block" id="turnstile-error" role="alert"></div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="contactStatus" class="alert d-none mb-0" role="status" aria-live="polite"></div>
                                     </div>
                                     <div class="col-12">
                                         <button class="w-100 btn btn-primary p-3 rounded-pill" type="submit">Send Message</button>
+                                        <p class="small mt-3 mb-0 text-center"><span class="text-danger" aria-hidden="true">*</span> Required field</p>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-5 wow bounceInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-5 reveal" data-reveal-delay="0.3s">
                         <div class="d-flex flex-column gap-4 h-100">
                             <div class="contact-card">
-                                <i class="fas fa-envelope"></i>
+                                <svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-envelope"></use></svg>
                                 <div>
-                                    <h5 class="mb-1">Email</h5>
-                                    <!-- TODO: replace with your real email -->
-                                    <p class="mb-0">info@example.com</p>
+                                    <h3 class="h5 mb-1">Email</h3>
+                                    <p class="mb-0"><a href="mailto:hello@example.com">hello@example.com</a></p>
                                 </div>
                             </div>
                             <div class="contact-card">
-                                <i class="fas fa-clock"></i>
+                                <svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-clock"></use></svg>
                                 <div>
-                                    <h5 class="mb-1">Response Time</h5>
+                                    <h3 class="h5 mb-1">Response Time</h3>
                                     <p class="mb-0">We aim to reply within 2&ndash;3 business days.</p>
                                 </div>
                             </div>
                             <div class="contact-card">
-                                <i class="fas fa-lock"></i>
+                                <svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-lock"></use></svg>
                                 <div>
-                                    <h5 class="mb-1">Confidential</h5>
+                                    <h3 class="h5 mb-1">Confidential</h3>
                                     <p class="mb-0">Everything you send us is kept private.</p>
                                 </div>
                             </div>
                             <div class="noir-card flex-grow-1">
                                 <p class="noir-tagline mb-3">Ready to join?</p>
                                 <p class="position-relative text-white-50 mb-4">Skip the back-and-forth and send us your application directly. It takes about 5 minutes.</p>
-                                <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill position-relative">Apply Now<i class="fas fa-arrow-right ps-2"></i></a>
+                                <a href="apply/" class="btn btn-outline-primary py-3 px-5 rounded-pill position-relative">Start Your Application<svg class="icon ps-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-arrow-right"></use></svg></a>
                             </div>
                         </div>
                     </div>
@@ -164,45 +191,39 @@
         </div>
         <!-- Contact End -->
 
+        </main>
 
         <!-- Footer Start -->
+        <footer>
         <div class="container-fluid footer py-6 mb-0 bg-light">
             <div class="container">
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-item">
-                            <h1 class="text-primary">Oura<span class="text-dark">Noir</span></h1>
+                            <p class="brand-logo text-primary mb-3">Oura<span class="text-dark">Noir</span></p>
                             <p class="lh-lg mb-4">A full-service management agency helping creators grow their brand, their audience and their income &mdash; on their own terms.</p>
-                            <!-- TODO: add your real social media links -->
-                            <div class="footer-icon d-flex">
-                                <a class="btn btn-primary btn-sm-square me-2 rounded-circle" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-primary btn-sm-square me-2 rounded-circle" href="#" aria-label="X / Twitter"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-primary btn-sm-square rounded-circle" href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                            </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="footer-item">
-                            <h4 class="mb-4">Quick Links</h4>
-                            <div class="d-flex flex-column align-items-start">
-                                <a class="text-body mb-3" href="about.html"><i class="fa fa-angle-right text-primary me-2"></i>About Us</a>
-                                <a class="text-body mb-3" href="service.html"><i class="fa fa-angle-right text-primary me-2"></i>Services</a>
-                                <a class="text-body mb-3" href="index.html#process"><i class="fa fa-angle-right text-primary me-2"></i>How It Works</a>
-                                <a class="text-body mb-3" href="index.html#faq"><i class="fa fa-angle-right text-primary me-2"></i>FAQ</a>
-                                <a class="text-body mb-3" href="apply/"><i class="fa fa-angle-right text-primary me-2"></i>Apply Now</a>
-                            </div>
-                        </div>
+                        <nav class="footer-item" aria-label="Footer">
+                            <h2 class="h4 mb-4">Quick Links</h2>
+                            <ul class="list-unstyled footer-links mb-0">
+                                <li><a href="about.html"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>About Us</a></li>
+                                <li><a href="service.html"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>Services</a></li>
+                                <li><a href="index.html#process"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>How It Works</a></li>
+                                <li><a href="index.html#faq"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>FAQ</a></li>
+                                <li><a href="apply/"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-angle-right"></use></svg>Apply Now</a></li>
+                            </ul>
+                        </nav>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-item">
-                            <h4 class="mb-4">Contact Us</h4>
-                            <!-- TODO: replace with your real contact details -->
-                            <div class="d-flex flex-column align-items-start">
-                                <p><i class="fas fa-envelope text-primary me-2"></i> info@example.com</p>
-                                <p><i class="fa fa-clock text-primary me-2"></i> Fan engagement 24/7</p>
-                                <p><i class="fas fa-lock text-primary me-2"></i> All enquiries are confidential</p>
-                                <a href="contact.html" class="btn btn-primary py-2 px-4 rounded-pill">Get In Touch</a>
-                            </div>
+                            <h2 class="h4 mb-4">Contact Us</h2>
+                            <ul class="list-unstyled footer-links mb-4">
+                                <li><a href="mailto:hello@example.com"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-envelope"></use></svg>hello@example.com</a></li>
+                                <li><span class="footer-text"><svg class="icon text-primary me-2" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-lock"></use></svg>All enquiries are confidential</span></li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-outline-dark py-2 px-4 rounded-pill">Send Us A Message</a>
                         </div>
                     </div>
                 </div>
@@ -214,37 +235,29 @@
         <!-- Copyright Start -->
         <div class="container-fluid copyright bg-dark py-4">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <span class="text-light"><i class="fas fa-copyright text-light me-2"></i>OuraNoir. All rights reserved. 18+ only.</span>
+                <div class="row g-3 align-items-center">
+                    <div class="col-lg-5 text-center text-lg-start">
+                        <span class="text-light">&copy; 2026 OuraNoir. All rights reserved. 18+ only.</span>
                     </div>
-                    <div class="col-md-6 my-auto text-center text-md-end text-white">
+                    <div class="col-lg-7 text-center text-lg-end">
+                        <ul class="legal-links list-inline mb-2">
+                            <li class="list-inline-item"><a href="privacy.html">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="terms.html">Terms &amp; Conditions</a></li>
+                            <li class="list-inline-item"><button type="button" class="link-button" data-cookie-settings>Cookie Settings</button></li>
+                        </ul>
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://aquikee.co.ke/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://aquikee.co.ke">Aquikee</a> Distributed By <a class="border-bottom" href="https://aquikee.co.ke">Aquikee Web Solutions</a>
+                        <span class="template-credit">Designed By <a href="https://aquikee.co.ke" rel="noopener">Aquikee</a> Distributed By <a href="https://aquikee.co.ke" rel="noopener">Aquikee Web Solutions</a></span>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Copyright End -->
+        </footer>
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-md-square btn-primary rounded-circle back-to-top" aria-label="Back to top"><i class="fa fa-arrow-up"></i></a>
-
-
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-        <script src="js/contact.js"></script>
+        <a href="#main" class="btn btn-md-square btn-primary rounded-circle back-to-top" aria-label="Back to top"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#fas-arrow-up"></use></svg></a>
     </body>
 </html>

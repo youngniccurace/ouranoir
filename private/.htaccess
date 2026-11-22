@@ -1,0 +1,5 @@
+# Server-side code, configuration and stored submissions. Never served to browsers.
+Require all denied
+<IfModule !mod_authz_core.c>
+    Deny from all
+</IfModule>

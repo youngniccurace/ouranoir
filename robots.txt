@@ -1,0 +1,12 @@
+# OuraNoir
+User-agent: *
+Allow: /
+# Server-side code, form handlers and source folders are not pages
+Disallow: /private/
+Disallow: /tools/
+Disallow: /fan-form-flow/
+Disallow: /scss/
+Disallow: /contact.php
+Disallow: /apply/process_form.php
+
+Sitemap: https://www.example.com/sitemap.xml

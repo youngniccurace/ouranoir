@@ -1,6 +1,12 @@
-# Form app dependencies (source lives in fan-form-flow/, build output in apply/)
+# Dependencies (fan-form-flow/ and tools/)
 node_modules/
 
-# Model applications + ID documents saved by apply/process_form.php.
-# These are private and must never be committed.
+# Server-side secrets: copy private/config.example.php -> private/config.local.php
+private/config.local.php
+.env
+.env.*
+
+# Applications, ID documents, messages and rate-limit data saved by the form handlers.
+# Private personal data: must never be committed.
+private/storage/
 applications/

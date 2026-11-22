@@ -1,0 +1,69 @@
+# =============================================================================
+# OuraNoir - Apache configuration (shared hosting / cPanel).
+# Equivalent nginx rules: deploy/nginx.conf.example
+# =============================================================================
+
+Options -Indexes
+DirectoryIndex index.html
+AddDefaultCharset UTF-8
+
+# --- Custom 404 page (served with a real 404 status) -------------------------
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # --- Force HTTPS: permanent (301) redirect from http:// to https:// -------
+    # (X-Forwarded-Proto covers hosts behind a proxy/CDN such as Cloudflare)
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # --- Optional: pick ONE canonical host. Uncomment to redirect www -> bare domain
+    # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    # RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+    # --- Never serve source code, secrets, storage or dotfiles (.git, .env ...) ----
+    RewriteRule (^|/)\.(?!well-known/) - [R=404,L]
+    RewriteRule ^(private|tools|fan-form-flow|scss|node_modules|deploy|css/vendor)(/|$) - [R=404,L]
+    RewriteRule (^|/)(README\.md|package(-lock)?\.json|composer\.(json|lock))$ - [R=404,L]
+
+    # --- Old URLs ------------------------------------------------------------------
+    RewriteRule ^book\.html$ /apply/ [R=301,L]
+    RewriteRule ^(event|menu|blog|team|testimonial)\.html$ / [R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    # HTTPS for a year, including subdomains (only sent over HTTPS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+    # Only our own files, Google Analytics (after consent) and Cloudflare Turnstile may load.
+    # Edit here if you add another third-party service.
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+
+    # Caching: CSS/JS/fonts/images are versioned (?v=hash or hashed names) -> cache for a year
+    <FilesMatch "\.(css|js|woff2|svg|png|jpe?g|webp|ico|webmanifest)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(html|xml|txt)$">
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+    <FilesMatch "\.php$">
+        Header set Cache-Control "no-store"
+    </FilesMatch>
+</IfModule>
+
+# --- Compression -----------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml image/svg+xml application/manifest+json
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddType application/manifest+json .webmanifest
+    AddType font/woff2 .woff2
+    AddType image/svg+xml .svg
+</IfModule>

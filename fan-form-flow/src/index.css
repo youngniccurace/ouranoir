@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playball&display=swap');
+/* Fonts are self-hosted by the main site: ../css/fonts.css (linked in index.html) */
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
 @layer base {
   :root {
     --background: 41 100% 98%;
-    --foreground: 210 2% 60%;
+    --foreground: 0 0% 25%;
 
     --card: 0 0% 100%;
     --card-foreground: 215 2% 3%;
@@ -23,7 +23,7 @@
     --secondary-foreground: 215 2% 3%;
 
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 60%;
+    --muted-foreground: 0 0% 40%;
 
     --accent: 0 0% 96%;
     --accent-foreground: 215 2% 3%;
@@ -31,8 +31,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 2% 65% / 0.2;
-    --input: 215 2% 65% / 0.2;
+    --border: 215 2% 45% / 0.35;
+    --input: 36 50% 34% / 0.75;
     --ring: 36 61% 61%;
 
     --radius: 0.5rem;
@@ -45,7 +45,8 @@
   }
 
   body {
-    @apply bg-light text-secondary min-h-screen;
+    @apply bg-light min-h-screen;
+    color: #404040;
     font-family: 'Open Sans', sans-serif;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
@@ -70,7 +71,7 @@
   }
   
   .text-secondary {
-    color: #9A9A9A;
+    color: #5F5F5F; /* was #9A9A9A (2.7:1); now 6.2:1 on #FFFCF8 */
   }
   
   .bg-primary {
@@ -78,6 +79,20 @@
   }
   
   .text-primary {
-    color: #D4A762;
+    color: #8F6526; /* text on light backgrounds; brand gold #D4A762 is only 2.2:1 */
+  }
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 3px solid #050709;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

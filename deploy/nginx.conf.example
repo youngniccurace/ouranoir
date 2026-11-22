@@ -1,0 +1,53 @@
+# OuraNoir - nginx equivalent of the root .htaccess (adjust paths / PHP-FPM socket).
+server {
+    listen 80;
+    listen [::]:80;
+    server_name example.com www.example.com;           # TODO: your domain
+    return 301 https://$host$request_uri;               # force HTTPS
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name example.com www.example.com;           # TODO
+    root /var/www/ouranoir;                            # TODO
+    index index.html;
+
+    # ssl_certificate / ssl_certificate_key: e.g. from Let's Encrypt (certbot --nginx)
+
+    client_max_body_size 64m;
+    error_page 404 /404.html;
+    error_page 403 =404 /404.html;
+
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()" always;
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests" always;
+
+    # Never serve source, secrets, storage or dotfiles
+    location ~ /\.(?!well-known/) { return 404; }
+    location ~ ^/(private|tools|fan-form-flow|scss|node_modules|deploy|css/vendor)(/|$) { return 404; }
+    location ~ (README\.md|package(-lock)?\.json)$ { return 404; }
+
+    location = /book.html { return 301 /apply/; }
+    location ~ ^/(event|menu|blog|team|testimonial)\.html$ { return 301 /; }
+
+    location ~* \.(css|js|woff2|svg|png|jpe?g|webp|ico|webmanifest)$ {
+        add_header Cache-Control "public, max-age=31536000, immutable";
+        try_files $uri =404;
+    }
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;    # TODO
+        # Secrets can be provided here instead of private/config.local.php:
+        # fastcgi_param OURANOIR_TURNSTILE_SECRET_KEY "...";
+    }
+
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml application/manifest+json text/plain text/xml;
+}

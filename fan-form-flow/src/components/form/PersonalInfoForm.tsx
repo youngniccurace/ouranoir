@@ -1,118 +1,52 @@
-
 import React from 'react';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { FormData } from '@/types/form';
+import type { FieldErrors } from '@/lib/validation';
+import TextField from './TextField';
 
 interface PersonalInfoFormProps {
   formData: FormData;
   updateFormData: (data: Partial<FormData>) => void;
+  errors: FieldErrors;
 }
 
-const PersonalInfoForm = ({ formData, updateFormData }: PersonalInfoFormProps) => {
+const PersonalInfoForm = ({ formData, updateFormData, errors }: PersonalInfoFormProps) => {
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="firstName">First Name</Label>
-          <Input
-            id="firstName"
-            placeholder="Your first name"
-            value={formData.firstName}
-            onChange={(e) => updateFormData({ firstName: e.target.value })}
-            required
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <Label htmlFor="lastName">Last Name</Label>
-          <Input
-            id="lastName"
-            placeholder="Your last name"
-            value={formData.lastName}
-            onChange={(e) => updateFormData({ lastName: e.target.value })}
-            required
-          />
-        </div>
+        <TextField id="firstName" label="First Name" required autoComplete="given-name" maxLength={100}
+          placeholder="Your first name" value={formData.firstName} error={errors.firstName}
+          onChange={(v) => updateFormData({ firstName: v })} />
+        <TextField id="lastName" label="Last Name" required autoComplete="family-name" maxLength={100}
+          placeholder="Your last name" value={formData.lastName} error={errors.lastName}
+          onChange={(v) => updateFormData({ lastName: v })} />
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="stageName">Stage Name (if different)</Label>
-          <Input
-            id="stageName"
-            placeholder="Your stage name"
-            value={formData.stageName}
-            onChange={(e) => updateFormData({ stageName: e.target.value })}
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <Label htmlFor="dateOfBirth">Date of Birth</Label>
-          <Input
-            id="dateOfBirth"
-            type="date"
-            value={formData.dateOfBirth}
-            onChange={(e) => updateFormData({ dateOfBirth: e.target.value })}
-            required
-          />
-        </div>
+        <TextField id="stageName" label="Stage Name (if different)" autoComplete="nickname" maxLength={100}
+          placeholder="Your stage name" value={formData.stageName} error={errors.stageName}
+          onChange={(v) => updateFormData({ stageName: v })} />
+        <TextField id="dateOfBirth" label="Date of Birth" type="date" required autoComplete="bday"
+          hint="You must be 18 or over to apply." value={formData.dateOfBirth} error={errors.dateOfBirth}
+          onChange={(v) => updateFormData({ dateOfBirth: v })} />
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="email">Email Address</Label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="your.email@example.com"
-            value={formData.email}
-            onChange={(e) => updateFormData({ email: e.target.value })}
-            required
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <Label htmlFor="phone">Phone Number</Label>
-          <Input
-            id="phone"
-            type="tel"
-            placeholder="Your phone number"
-            value={formData.phone}
-            onChange={(e) => updateFormData({ phone: e.target.value })}
-            required
-          />
-        </div>
+        <TextField id="email" label="Email Address" type="email" required autoComplete="email" inputMode="email" maxLength={254}
+          placeholder="your.email@example.com" value={formData.email} error={errors.email}
+          onChange={(v) => updateFormData({ email: v })} />
+        <TextField id="phone" label="Phone Number" type="tel" required autoComplete="tel" inputMode="tel" maxLength={40}
+          placeholder="+254 712 345 678" value={formData.phone} error={errors.phone}
+          onChange={(v) => updateFormData({ phone: v })} />
       </div>
-      
-      <div className="grid grid-cols-1 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="location">Location (City, Country)</Label>
-          <Input
-            id="location"
-            placeholder="New York, USA"
-            value={formData.location}
-            onChange={(e) => updateFormData({ location: e.target.value })}
-            required
-          />
-        </div>
-      </div>
-      
-      <div className="grid grid-cols-1 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="aboutYou">Tell us about yourself</Label>
-          <Textarea
-            id="aboutYou"
-            placeholder="Share a bit about yourself, your background, and why you're interested in becoming an OnlyFans model with our agency..."
-            className="min-h-32"
-            value={formData.aboutYou}
-            onChange={(e) => updateFormData({ aboutYou: e.target.value })}
-            required
-          />
-        </div>
-      </div>
+
+      <TextField id="location" label="Location (City, Country)" autoComplete="address-level2" maxLength={150}
+        placeholder="Nairobi, Kenya" value={formData.location} error={errors.location}
+        onChange={(v) => updateFormData({ location: v })} />
+
+      <TextField id="aboutYou" label="Tell us about yourself" multiline className="min-h-32" maxLength={2000}
+        placeholder="Share a bit about yourself, your background, and why you're interested in working with our agency..."
+        value={formData.aboutYou} error={errors.aboutYou}
+        onChange={(v) => updateFormData({ aboutYou: v })} />
     </div>
   );
 };

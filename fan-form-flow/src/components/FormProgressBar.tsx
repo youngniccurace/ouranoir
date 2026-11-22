@@ -23,17 +23,17 @@ const FormProgressBar = ({ steps, currentStep, className }: FormProgressBarProps
   };
 
   return (
-    <div className={cn("w-full mb-5", className)}>
-      <div className="flex justify-between items-center">
+    <nav aria-label="Application progress" className={cn("w-full mb-5", className)}>
+      <ol className="flex justify-between items-center">
         {steps.map((step, index) => (
           <React.Fragment key={index}>
-            <div className="flex flex-col items-center">
+            <li className="flex flex-col items-center" aria-current={index === currentStep ? 'step' : undefined}>
               <div 
                 className={cn(
                   "w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 shadow-sm", 
-                  index < currentStep ? "bg-primary text-white" : 
-                  index === currentStep ? "bg-white border-2 border-primary text-primary" : 
-                  "bg-gray-100 text-gray-400"
+                  index < currentStep ? "bg-primary text-[#050709]" : 
+                  index === currentStep ? "bg-white border-2 border-primary text-[#8F6526]" : 
+                  "bg-gray-100 text-gray-600"
                 )}
               >
                 {index < currentStep ? (
@@ -42,28 +42,31 @@ const FormProgressBar = ({ steps, currentStep, className }: FormProgressBarProps
                   getStepIcon(index)
                 )}
               </div>
-              <span 
+              <span aria-hidden="true"
                 className={cn(
                   "text-xs mt-2 hidden md:block whitespace-nowrap", 
-                  index <= currentStep ? "text-primary font-medium" : "text-gray-400"
+                  index <= currentStep ? "text-[#8F6526] font-semibold" : "text-gray-600"
                 )}
               >
                 {step}
               </span>
-            </div>
+              <span className="sr-only">
+                {`Step ${index + 1}: ${step}${index < currentStep ? ' (completed)' : index === currentStep ? ' (current)' : ''}`}
+              </span>
+            </li>
             
             {index < steps.length - 1 && (
-              <div 
+              <li aria-hidden="true"
                 className={cn(
                   "flex-1 h-1 mx-1", 
                   index < currentStep ? "bg-primary" : "bg-gray-200"
                 )}
-              ></div>
+              ></li>
             )}
           </React.Fragment>
         ))}
-      </div>
-    </div>
+      </ol>
+    </nav>
   );
 };
 

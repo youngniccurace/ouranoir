@@ -4,14 +4,17 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { type FormData as ApplicationFormData } from '@/types/form';
 import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
+import type { FieldErrors } from '@/lib/validation';
+import FieldError from './FieldError';
+import Turnstile from './Turnstile';
 
 // Props interface for the SubmissionForm component
 interface SubmissionFormProps {
   formData: ApplicationFormData;
   updateFormData: (data: Partial<ApplicationFormData>) => void;
-  onSubmit: () => void | Promise<void>;
   isSubmitting: boolean;
+  errors: FieldErrors;
+  onTurnstileToken: (token: string) => void;
 }
 
 /**
@@ -25,23 +28,15 @@ interface SubmissionFormProps {
 const SubmissionForm = ({ 
   formData, 
   updateFormData,
-  onSubmit,
-  isSubmitting
+  isSubmitting,
+  errors,
+  onTurnstileToken
 }: SubmissionFormProps) => {
-  // Validate agreements, then let the parent component send the application
-  const handleSubmit = () => {
-    if (!formData.agreeTerms || !formData.agreeContact || !formData.confirmAccurate) {
-      toast.error('Please agree to all terms to submit');
-      return;
-    }
-    onSubmit();
-  };
-  
   return (
     <div className="space-y-6">
       {/* Application Summary Section */}
       <div className="rounded-lg bg-primary/10 p-6">
-        <h3 className="text-lg font-medium mb-4">Application Summary</h3>
+        <h2 className="text-lg font-semibold mb-4">Application Summary</h2>
         
         <div className="space-y-4 text-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -110,53 +105,76 @@ const SubmissionForm = ({
         <div className="flex items-start space-x-3">
           <Checkbox 
             id="agreeTerms" 
+            className="h-5 w-5 mt-0.5"
+            aria-invalid={errors.agreeTerms ? true : undefined}
+            aria-describedby={errors.agreeTerms ? 'agreeTerms-error' : undefined}
             checked={formData.agreeTerms}
             onCheckedChange={(checked) => 
               updateFormData({ agreeTerms: checked === true })
             }
           />
+          <div>
           <Label htmlFor="agreeTerms" className="text-sm leading-relaxed">
             I confirm that I am at least 18 years of age and I agree to the{" "}
-            <a href="#" className="text-primary font-medium hover:underline">Terms of Service</a>{" "}
+            <a href="../terms.html" target="_blank" rel="noopener" className="text-primary font-semibold underline">Terms &amp; Conditions<span className="sr-only"> (opens in a new tab)</span></a>{" "}
             and{" "}
-            <a href="#" className="text-primary font-medium hover:underline">Privacy Policy</a>.
+            <a href="../privacy.html" target="_blank" rel="noopener" className="text-primary font-semibold underline">Privacy Policy<span className="sr-only"> (opens in a new tab)</span></a>.
           </Label>
+            <FieldError id="agreeTerms" message={errors.agreeTerms} />
+          </div>
         </div>
         
         <div className="flex items-start space-x-3">
           <Checkbox 
             id="agreeContact" 
+            className="h-5 w-5 mt-0.5"
+            aria-invalid={errors.agreeContact ? true : undefined}
+            aria-describedby={errors.agreeContact ? 'agreeContact-error' : undefined}
             checked={formData.agreeContact}
             onCheckedChange={(checked) => 
               updateFormData({ agreeContact: checked === true })
             }
           />
+          <div>
           <Label htmlFor="agreeContact" className="text-sm leading-relaxed">
             I consent to being contacted by the agency team regarding my application and opportunities via email, phone, or message.
           </Label>
+            <FieldError id="agreeContact" message={errors.agreeContact} />
+          </div>
         </div>
         
         <div className="flex items-start space-x-3">
           <Checkbox 
             id="confirmAccurate" 
+            className="h-5 w-5 mt-0.5"
+            aria-invalid={errors.confirmAccurate ? true : undefined}
+            aria-describedby={errors.confirmAccurate ? 'confirmAccurate-error' : undefined}
             checked={formData.confirmAccurate}
             onCheckedChange={(checked) => 
               updateFormData({ confirmAccurate: checked === true })
             }
           />
+          <div>
           <Label htmlFor="confirmAccurate" className="text-sm leading-relaxed">
             I confirm that all information and materials provided in this application are accurate and authentic.
           </Label>
+            <FieldError id="confirmAccurate" message={errors.confirmAccurate} />
+          </div>
         </div>
       </div>
       
-      {/* Submit Button - Made more visible with brand colors */}
+      {/* Spam protection: Cloudflare Turnstile (only when configured) */}
+      <div>
+        <Turnstile onToken={onTurnstileToken} />
+        <FieldError id="turnstile" message={errors.turnstile} />
+      </div>
+
       <Button
-        onClick={handleSubmit}
-        disabled={!formData.agreeTerms || !formData.agreeContact || !formData.confirmAccurate || isSubmitting}
-        className="w-full bg-primary hover:bg-primary/80 text-white shadow-lg py-6 text-lg font-bold rounded-md mt-6 transition-all duration-300 transform hover:scale-[1.01] hover:shadow-xl border-2 border-primary/20"
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-primary hover:bg-[#050709] hover:text-[#D4A762] text-[#050709] shadow-lg py-6 text-lg font-bold rounded-full mt-2 transition-colors"
       >
-        {isSubmitting ? "Submitting..." : "SUBMIT APPLICATION"}
+        {isSubmitting ? "Submitting your application…" : "Submit My Application"}
       </Button>
     </div>
   );

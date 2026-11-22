@@ -1,0 +1,6 @@
+# Form app dependencies (source lives in fan-form-flow/, build output in apply/)
+node_modules/
+
+# Model applications + ID documents saved by apply/process_form.php.
+# These are private and must never be committed.
+applications/

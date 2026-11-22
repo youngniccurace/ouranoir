@@ -1,38 +1,55 @@
         <!-- Hero Start -->
-        <div class="container-fluid bg-light py-6 my-6 mt-0">
-            <div class="container">
+        <!-- Dark editorial hero (design from the Lovable version, built properly).
+             To use a photo behind it, set --hero-photo in css/style.css (see .hero-noir). -->
+        <section class="hero-noir" aria-labelledby="hero-title">
+            <div class="hero-noir-bg" aria-hidden="true">
+                <span class="hero-noir-glow hero-noir-glow-1"></span>
+                <span class="hero-noir-glow hero-noir-glow-2"></span>
+                <span class="hero-noir-watermark">ON</span>
+            </div>
+            <div class="container position-relative">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-7 col-md-12">
-                        <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-4 animated bounceInDown">OnlyFans Management Agency</small>
-                        <h1 class="display-1 mb-4 animated bounceInDown">You Create. <span class="text-primary">We Grow</span> Your Brand.</h1>
-                        <p class="fs-5 mb-5 animated bounceInDown">OuraNoir handles the strategy, promotion and fan engagement behind your page &mdash; so you can focus on creating, while keeping full ownership of your account and your content.</p>
+                    <div class="col-lg-7">
+                        <p class="hero-eyebrow">Creator Management Agency</p>
+                        <h1 id="hero-title" class="hero-title">We grow your audience.<br><em>You keep creating.</em></h1>
+                        <p class="hero-lead">OuraNoir handles your strategy, marketing and monetization &mdash; so you can focus on what you do best. More earnings, less guesswork, and your account always stays yours.</p>
                         <div class="hero-actions">
-                            <a href="apply/" class="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-3 mb-3 animated bounceInLeft">Start Your Application <i class="fas fa-arrow-right ps-2"></i></a>
-                            <a href="#process" class="btn btn-outline-dark rounded-pill py-3 px-4 px-md-5 mb-3 animated bounceInLeft">See How It Works</a>
+                            <a href="apply/" class="btn btn-primary rounded-pill py-3 px-4 px-md-5 me-3 mb-3">Start Your Application <i class="fas fa-arrow-right ps-2"></i></a>
+                            <a href="#process" class="btn btn-outline-light rounded-pill py-3 px-4 px-md-5 mb-3">See How It Works</a>
                         </div>
-                        <p class="small text-muted mt-2 mb-0 animated bounceInLeft"><i class="fas fa-lock text-primary me-2"></i>18+ only &middot; Applications are confidential &middot; Takes about 5 minutes</p>
+                        <p class="hero-trust"><i class="fas fa-lock me-2"></i>18+ only &middot; Confidential &middot; Takes about 5 minutes</p>
                     </div>
-                    <div class="col-lg-5 col-md-12">
-                        <!-- Decorative brand card (no stock photos). Replace with an agency photo if you like. -->
-                        <div class="noir-card animated zoomIn">
-                            <div class="noir-monogram">ON</div>
-                            <p class="noir-tagline">Elite creator management</p>
-                            <ul class="noir-list list-unstyled mb-0">
-                                <li><i class="fas fa-chart-line"></i>Growth strategy</li>
-                                <li><i class="fas fa-bullhorn"></i>Promotion &amp; marketing</li>
-                                <li><i class="fas fa-comments"></i>24/7 fan engagement</li>
-                                <li><i class="fas fa-user-shield"></i>Privacy &amp; leak protection</li>
-                            </ul>
+                    <div class="col-lg-5">
+                        <div class="hero-visual">
+                            <div class="noir-card hero-card">
+                                <div class="noir-monogram">ON</div>
+                                <p class="noir-tagline">Elite creator management</p>
+                                <ul class="noir-list list-unstyled mb-0">
+                                    <li><i class="fas fa-chart-line"></i>Revenue &amp; pricing strategy</li>
+                                    <li><i class="fas fa-bullhorn"></i>Marketing &amp; growth</li>
+                                    <li><i class="fas fa-comments"></i>24/7 fan engagement</li>
+                                    <li><i class="fas fa-user-shield"></i>Privacy &amp; leak protection</li>
+                                </ul>
+                            </div>
+                            <!-- Floating detail cards. TODO: swap one for a real, verifiable stat (e.g. creators managed) when you have it. -->
+                            <div class="hero-chip hero-chip-1">
+                                <i class="fas fa-user-check"></i>
+                                <span><strong>Reviewed personally</strong>No bots, no templates</span>
+                            </div>
+                            <div class="hero-chip hero-chip-2">
+                                <i class="fas fa-key"></i>
+                                <span><strong>You own your account</strong>Always, from day one</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!-- Hero End -->
 
 
         <!-- About Start -->
-        <div class="container-fluid py-6 pt-0" id="about">
+        <div class="container-fluid py-6" id="about">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-5 wow bounceInUp" data-wow-delay="0.1s">
@@ -98,7 +115,7 @@
             <div class="container">
                 <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
                     <small class="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-3">Our Services</small>
-                    <h2 class="display-5 mb-5">Everything Your Page Needs</h2>
+                    <h2 class="display-5 mb-5">Built For <span class="text-primary">Creators</span> Who Want More</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6 col-sm-12 wow bounceInUp" data-wow-delay="0.1s">
@@ -106,8 +123,8 @@
                             <div class="service-content d-flex align-items-center justify-content-center p-4">
                                 <div class="service-content-icon text-center">
                                     <i class="fas fa-user-tie fa-5x text-primary mb-4"></i>
-                                    <h3 class="h4 mb-3">Account Management</h3>
-                                    <p class="mb-0">Day-to-day running of your page: posting schedule, pricing, bundles and promotions.</p>
+                                    <h3 class="h4 mb-3">Revenue Optimization</h3>
+                                    <p class="mb-0">Strategic pricing, bundles and upsells that make the most of every subscriber interaction.</p>
                                 </div>
                             </div>
                         </div>
@@ -118,7 +135,7 @@
                                 <div class="service-content-icon text-center">
                                     <i class="fas fa-lightbulb fa-5x text-primary mb-4"></i>
                                     <h3 class="h4 mb-3">Content Strategy</h3>
-                                    <p class="mb-0">Content plans and ideas based on what your audience responds to, within your limits.</p>
+                                    <p class="mb-0">Custom content calendars and creative direction that keep your audience engaged &mdash; always within your limits.</p>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +168,7 @@
                                 <div class="service-content-icon text-center">
                                     <i class="fas fa-bullhorn fa-5x text-primary mb-4"></i>
                                     <h3 class="h4 mb-3">Promotion &amp; Marketing</h3>
-                                    <p class="mb-0">Targeted campaigns and cross-promotion to put your page in front of the right audience.</p>
+                                    <p class="mb-0">Cross-platform promotion, audience targeting and retention strategies that compound over time.</p>
                                 </div>
                             </div>
                         </div>
@@ -205,15 +222,15 @@
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.1s">
                         <div class="step-item">
-                            <span class="step-number" aria-hidden="true">01</span>
+                            <span class="step-number" data-step="01" aria-hidden="true"></span>
                             <i class="fas fa-file-signature fa-3x text-primary mb-4"></i>
                             <h3 class="h4 mb-3">Apply Online</h3>
-                            <p class="mb-0">Fill in our short application form with your details, socials and a few photos. It takes about 5 minutes.</p>
+                            <p class="mb-0">Tell us about your content and goals in a 5-minute form. We review every application personally &mdash; no bots, no templates.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.3s">
                         <div class="step-item">
-                            <span class="step-number" aria-hidden="true">02</span>
+                            <span class="step-number" data-step="02" aria-hidden="true"></span>
                             <i class="fas fa-phone-alt fa-3x text-primary mb-4"></i>
                             <h3 class="h4 mb-3">Intro Call</h3>
                             <p class="mb-0">If it's a good fit, we'll contact you to talk about your goals, boundaries and how we work.</p>
@@ -221,18 +238,18 @@
                     </div>
                     <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.5s">
                         <div class="step-item">
-                            <span class="step-number" aria-hidden="true">03</span>
+                            <span class="step-number" data-step="03" aria-hidden="true"></span>
                             <i class="fas fa-map-signs fa-3x text-primary mb-4"></i>
-                            <h3 class="h4 mb-3">Your Growth Plan</h3>
-                            <p class="mb-0">We build a personal strategy for your brand, content, pricing and promotion.</p>
+                            <h3 class="h4 mb-3">We Build Your Strategy</h3>
+                            <p class="mb-0">A custom growth plan &mdash; content calendar, pricing and audience targeting &mdash; tailored to you.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 wow bounceInUp" data-wow-delay="0.7s">
                         <div class="step-item">
-                            <span class="step-number" aria-hidden="true">04</span>
+                            <span class="step-number" data-step="04" aria-hidden="true"></span>
                             <i class="fas fa-rocket fa-3x text-primary mb-4"></i>
-                            <h3 class="h4 mb-3">Launch &amp; Grow</h3>
-                            <p class="mb-0">Your team gets to work while you create, with regular check-ins and reports on your progress.</p>
+                            <h3 class="h4 mb-3">You Grow</h3>
+                            <p class="mb-0">We execute, you create. Your audience and earnings grow while we handle the rest, with regular reports on progress.</p>
                         </div>
                     </div>
                 </div>
@@ -302,8 +319,8 @@
         <!-- Call To Action Start -->
         <div class="container-fluid cta-noir py-6">
             <div class="container text-center wow bounceInUp" data-wow-delay="0.1s">
-                <h2 class="display-4 text-white mb-4">Ready To Take Your Page <span class="text-primary">To The Next Level?</span></h2>
-                <p class="fs-5 text-white-50 mb-5">Apply today. It's free, confidential and takes about 5 minutes.</p>
+                <h2 class="display-4 text-white mb-4">Ready To <span class="text-primary">Grow?</span></h2>
+                <p class="fs-5 text-white-50 mb-5">We only take on creators we believe in. If you're serious about scaling, apply today &mdash; it's free, confidential and takes about 5 minutes.</p>
                 <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill fs-5">Start Your Application <i class="fas fa-arrow-right ps-2"></i></a>
             </div>
         </div>

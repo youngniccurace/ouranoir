@@ -106,6 +106,8 @@ STYLES = ["css/site.min.css"]
 # js/site.min.js = consent.js + analytics.js + main.js, minified by build-assets.mjs
 SCRIPTS = ["js/site-config.js", "js/site.min.js"]
 PRELOAD_FONTS = ["fonts/playball-latin-400-normal.woff2", "fonts/open-sans-latin-400-normal.woff2"]
+# The homepage hero headline also needs Playfair Display early (it is the largest text on screen)
+PAGE_PRELOAD_FONTS = {"index.html": ["fonts/playfair-display-latin-700-normal.woff2"]}
 
 
 # ---------------------------------------------------------------------------
@@ -131,7 +133,7 @@ def head(page: dict) -> str:
     title, desc = esc(page["title"]), esc(page["description"])
     canonical = abs_url(page["path"]) if page["path"] is not None else None
     robots = "noindex, follow" if page.get("noindex") else "index, follow"
-    preload = "\n".join(f'        <link rel="preload" href="{f}" as="font" type="font/woff2" crossorigin>' for f in PRELOAD_FONTS)
+    preload = "\n".join(f'        <link rel="preload" href="{f}" as="font" type="font/woff2" crossorigin>' for f in PRELOAD_FONTS + PAGE_PRELOAD_FONTS.get(page["file"], []))
     styles = "\n".join(f'        <link rel="stylesheet" href="{versioned(s)}">' for s in STYLES)
     scripts = "\n".join(f'        <script src="{versioned(s)}" defer></script>' for s in SCRIPTS + page.get("scripts", []))
     canonical_tags = (f'        <link rel="canonical" href="{canonical}">\n'

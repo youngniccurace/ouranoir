@@ -23,6 +23,9 @@ const fonts = [
   ["@fontsource/open-sans/files/open-sans-latin-600-normal.woff2", "open-sans-latin-600-normal.woff2"],
   ["@fontsource/open-sans/files/open-sans-latin-700-normal.woff2", "open-sans-latin-700-normal.woff2"],
   ["@fontsource/playball/files/playball-latin-400-normal.woff2", "playball-latin-400-normal.woff2"],
+  // Hero headline (editorial serif from the Lovable design)
+  ["@fontsource/playfair-display/files/playfair-display-latin-700-normal.woff2", "playfair-display-latin-700-normal.woff2"],
+  ["@fontsource/playfair-display/files/playfair-display-latin-700-italic.woff2", "playfair-display-latin-700-italic.woff2"],
 ];
 for (const [src, dest] of fonts) copyFileSync(mod(src), join(root, "fonts", dest));
 console.log(`fonts: ${fonts.length} files`);

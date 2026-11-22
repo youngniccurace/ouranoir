@@ -247,7 +247,7 @@ h4, h5, h6, .h4, .h5, .h6 {
     position: relative;
     height: 100%;
     min-height: 400px;
-    background: linear-gradient(rgba(254, 218, 154, 0.1), rgba(254, 218, 154, 0.1)), url(../img/fact.jpg);
+    background: linear-gradient(rgba(254, 218, 154, 0.1), rgba(254, 218, 154, 0.1));
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -654,5 +654,59 @@ html {
 .cta-noir .btn.btn-primary:hover {
     background: #fff !important;
     color: var(--bs-dark) !important;
+}
+/* Services page */
+.service-detail {
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+.service-detail:hover {
+    transform: translateY(-6px);
+}
+
+.service-detail-icon {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bs-dark);
+    color: var(--bs-primary);
+    font-size: 1.75rem;
+}
+
+/* Contact page */
+.contact-card {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: var(--bs-light);
+    border: 1px solid rgba(212, 167, 98, .3);
+}
+
+.contact-card > i {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.25rem;
+    border-radius: 50%;
+    background: var(--bs-primary);
+    color: var(--bs-dark);
+    font-size: 1.3rem;
+}
+
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    box-shadow: 0 0 0 .2rem rgba(212, 167, 98, .35);
 }
 /*** OuraNoir homepage End ***/

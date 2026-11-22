@@ -111,6 +111,13 @@ PAGES = [
         "priority": "0.3",
     },
     {
+        # Internal brand reference (colour system for palette B): not indexed, not in the sitemap
+        "file": "brand.html", "content": "brand", "nav": "", "path": "brand.html",
+        "title": "Brand Colour System | OuraNoir",
+        "description": "OuraNoir brand colour system: Noir, Champagne Gold and Azure - roles, proportions, pairings and usage rules.",
+        "noindex": True,
+    },
+    {
         # Served by the web server for any missing URL, so it uses root-absolute paths
         "file": "404.html", "content": "404", "nav": "", "path": None,
         "title": "Page Not Found | OuraNoir",

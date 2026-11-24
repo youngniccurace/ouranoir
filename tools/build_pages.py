@@ -143,9 +143,9 @@ NAV_ITEMS = [
 STYLES = ["css/site.min.css"]
 # js/site.min.js = consent.js + analytics.js + main.js, minified by build-assets.mjs
 SCRIPTS = ["js/site-config.js", "js/site.min.js"]
-PRELOAD_FONTS = ["fonts/playball-latin-400-normal.woff2", "fonts/open-sans-latin-400-normal.woff2"]
+PRELOAD_FONTS = ["fonts/plus-jakarta-sans-latin-400-normal.woff2", "fonts/playfair-display-latin-700-normal.woff2"]
 # The homepage hero headline also needs Playfair Display early (it is the largest text on screen)
-PAGE_PRELOAD_FONTS = {"index.html": ["fonts/playfair-display-latin-700-normal.woff2"]}
+PAGE_PRELOAD_FONTS = {}
 
 
 # ---------------------------------------------------------------------------

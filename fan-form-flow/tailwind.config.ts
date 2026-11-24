@@ -84,8 +84,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
 			fontFamily: {
-				sans: ['Open Sans', 'sans-serif'],
-				playball: ['Playball', 'cursive'],
+				sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+				display: ['Playfair Display', 'Georgia', 'serif'],
 			}
 		}
 	},

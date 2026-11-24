@@ -113,6 +113,12 @@ const ApplicationForm = () => {
       return;
     }
 
+    if (window.OURANOIR_CONFIG?.previewMode) {
+      // Design preview without a server: show the success screen, send nothing
+      setIsSubmitted(true);
+      return;
+    }
+
     setIsSubmitting(true);
     const body = new FormData();
     const textFields: (keyof ApplicationData)[] = [

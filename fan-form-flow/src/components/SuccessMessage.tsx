@@ -33,6 +33,12 @@ const SuccessMessage = ({ onRestart }: SuccessMessageProps) => {
         </p>
       </div>
       
+      {window.OURANOIR_CONFIG?.previewMode && (
+        <p className="w-full mb-6 rounded-lg bg-[#E8F5FC] px-4 py-3 text-sm font-semibold text-[#0B6A99]">
+          Preview mode: this application was not sent anywhere.
+        </p>
+      )}
+
       <div className="flex flex-col md:flex-row gap-4 w-full">
         <Button
           variant="outline"

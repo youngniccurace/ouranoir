@@ -47,7 +47,7 @@
         if (!banner) build();
         var state = read();
         banner.querySelector("[data-consent-current]").textContent = state
-            ? "Current choice: analytics " + (state.analytics ? "allowed." : "not allowed.")
+            ? "Current choice: analytics " + (state.analytics ? "on." : "off.")
             : "";
         banner.hidden = false;
         banner.querySelector("[data-consent-accept]").focus({ preventScroll: true });
@@ -62,15 +62,14 @@
         banner.innerHTML =
             '<div class="consent-inner">' +
                 '<div class="consent-text">' +
-                    '<h2 class="consent-title">Your privacy</h2>' +
-                    '<p>We use essential storage to make this site work. With your permission we\'d also like to use ' +
-                    'analytics cookies (Google Analytics) to understand how visitors use the site. ' +
-                    '<a href="' + siteRoot + 'privacy.html#cookies">Read our Privacy Policy</a>.</p>' +
+                    '<h2 class="consent-title">Cookie choice</h2>' +
+                    '<p>We use optional analytics cookies to improve this site. ' +
+                    '<a href="' + siteRoot + 'privacy.html#cookies">Privacy Policy</a></p>' +
                     '<p class="consent-current" data-consent-current></p>' +
                 '</div>' +
                 '<div class="consent-actions">' +
-                    '<button type="button" class="consent-btn consent-btn-outline" data-consent-reject>Reject analytics</button>' +
-                    '<button type="button" class="consent-btn consent-btn-solid" data-consent-accept>Accept analytics</button>' +
+                    '<button type="button" class="consent-btn consent-btn-outline" data-consent-reject>Reject</button>' +
+                    '<button type="button" class="consent-btn consent-btn-solid" data-consent-accept>Accept</button>' +
                 '</div>' +
             '</div>';
         banner.querySelector("[data-consent-accept]").addEventListener("click", function () { save(true); });

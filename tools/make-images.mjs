@@ -13,9 +13,8 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
 const font = (f) => `data:font/woff2;base64,${readFileSync(join(root, "fonts", f)).toString("base64")}`;
 const fontCss = `
-  @font-face { font-family: Playball; src: url(${font("playball-latin-400-normal.woff2")}) format("woff2"); }
-  @font-face { font-family: "Open Sans"; font-weight: 400; src: url(${font("open-sans-latin-400-normal.woff2")}) format("woff2"); }
-  @font-face { font-family: "Open Sans"; font-weight: 700; src: url(${font("open-sans-latin-700-normal.woff2")}) format("woff2"); }
+  @font-face { font-family: "Plus Jakarta Sans"; font-weight: 400; src: url(${font("plus-jakarta-sans-latin-400-normal.woff2")}) format("woff2"); }
+  @font-face { font-family: "Plus Jakarta Sans"; font-weight: 700; src: url(${font("plus-jakarta-sans-latin-700-normal.woff2")}) format("woff2"); }
   html, body { margin: 0; }`;
 
 const svg = (f) => readFileSync(join(root, f), "utf8");
@@ -28,7 +27,7 @@ const tileHtml = (size, file, { pad = 0, bg = "#0A0F17", radius = 0 } = {}) => `
   .t svg { width:${size * (1 - pad)}px; height:${size * (1 - pad)}px; }</style><div class="t">${svg(file)}</div>`;
 
 const ogHtml = `<style>${fontCss2}
-  .og { width:1200px; height:630px; box-sizing:border-box; padding:72px 90px; position:relative; overflow:hidden; color:#F4F1EC; font-family:"Open Sans";
+  .og { width:1200px; height:630px; box-sizing:border-box; padding:72px 90px; position:relative; overflow:hidden; color:#F4F1EC; font-family:"Plus Jakarta Sans";
         background: radial-gradient(circle at 88% 12%, rgba(212,167,98,.32), transparent 42%), radial-gradient(circle at 6% 100%, rgba(30,155,215,.28), transparent 45%), #0A0F17; }
   .frame { position:absolute; inset:24px; border:1.5px solid rgba(212,167,98,.4); border-radius:28px; }
   .logo svg { height:62px; width:auto; }

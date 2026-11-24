@@ -16,5 +16,9 @@ window.OURANOIR_CONFIG = {
 
     // Public contact email shown on the application success screen.
     // Set CONTACT_EMAIL in tools/build_pages.py; the build copies it here.
-    contactEmail: "hello@example.com"
+    contactEmail: "hello@example.com",
+
+    // Preview mode (for design previews without a PHP server): forms validate as normal but show
+    // a "nothing was sent" success instead of submitting. Must stay false on the live site.
+    previewMode: false
 };

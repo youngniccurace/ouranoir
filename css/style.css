@@ -21,14 +21,44 @@
     z-index: 99;
 }
 
+/* Headings: Playfair Display (same voice as the logo and hero); body: Plus Jakarta Sans */
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
 h1, h2, h3, .h1, .h2, .h3 {
-    font-weight: 400 !important;
-    font-family: 'Playball', cursive !important;
+    font-weight: 700 !important;
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important;
+    letter-spacing: -.015em;
+}
+
+/* The highlighted word in a title is Playfair italic (gold in section titles) */
+.display-1 .text-primary,
+.display-4 .text-primary,
+.display-5 .text-primary {
+    font-style: italic;
+}
+
+.display-1 {
+    font-size: clamp(2.6rem, 5vw, 4.2rem);
+    line-height: 1.08;
+}
+
+.display-4 {
+    font-size: clamp(2.2rem, 4vw, 3.3rem);
+    line-height: 1.1;
+}
+
+.display-5 {
+    font-size: clamp(2rem, 3.4vw, 2.8rem);
+    line-height: 1.12;
 }
 
 h4, h5, h6, .h4, .h5, .h6 {
     font-weight: 600 !important;
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
 
 .my-6 {
@@ -515,16 +545,20 @@ html {
     justify-content: center;
     border: 2px solid var(--bs-primary);
     border-radius: 50%;
-    font-family: 'Playball', cursive;
-    font-size: 2.6rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2.4rem;
     color: var(--bs-primary);
     margin-bottom: 1.25rem;
 }
 
 .noir-tagline {
     position: relative;
-    font-family: 'Playball', cursive;
-    font-size: 2rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.8rem;
     color: #fff;
     margin-bottom: 1.75rem;
 }
@@ -602,8 +636,9 @@ html {
     position: absolute;
     top: 1.25rem;
     right: 1.5rem;
-    font-family: 'Playball', cursive;
-    font-size: 3rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 2.6rem;
     line-height: 1;
     color: rgba(212, 167, 98, .3);
 }
@@ -618,7 +653,7 @@ html {
 }
 
 .faq-accordion .accordion-header {
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
 
 .faq-accordion .accordion-button {
@@ -860,7 +895,7 @@ main:focus {
 /* --- Logo (was an <h1> on every page; now one real <h1> per page) --------- */
 .brand-logo {
     display: inline-block;
-    font-family: 'Playball', cursive;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.5rem;
     line-height: 1.2;
 }
@@ -1131,7 +1166,7 @@ main:focus {
 
 .legal-content h2 {
     margin: 2.5rem 0 1rem;
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 700 !important;
     font-size: 1.5rem;
     color: var(--bs-dark);
@@ -2188,7 +2223,7 @@ body {
     --accent: #1E9BD7; --accent-text: #0B6A99; --accent-large: #0B6A99; --accent-soft: rgba(30, 155, 215, .1); --link: #0B6A99; color: #6B6B6B; }
 .brand-demo[data-theme="dark"] { color: var(--text-muted-aa); }
 .brand-demo-label { margin-bottom: 1.5rem; font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--text-muted-aa); }
-.brand-demo-title { margin-bottom: 1.5rem; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 2rem; line-height: 1.15; color: var(--ink); }
+.brand-demo-title { margin-bottom: 1.5rem; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 2rem; letter-spacing: -.015em; line-height: 1.15; color: var(--ink); }
 .brand-demo-title em { color: var(--accent-large); }
 
 .rule { height: 100%; padding: 1.25rem; border-radius: 18px; background: var(--surface-card); box-shadow: var(--card-shadow); border-top: 5px solid; }
@@ -2206,8 +2241,8 @@ body {
 .rule-swatch-wide { width: 180px; }
 
 .brand-type-playfair { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 2.6rem; color: var(--ink); line-height: 1.1; }
-.brand-type-playball { margin: 0; font-family: 'Playball', cursive; font-size: 2.6rem; color: var(--accent-text); line-height: 1.2; }
-.brand-type-open { margin: 0; font-weight: 600; font-size: 2.2rem; color: var(--ink); }
+.brand-type-playball { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700; font-size: 2.6rem; color: var(--accent-text); line-height: 1.2; }
+.brand-type-open { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 2.2rem; color: var(--ink); letter-spacing: -.01em; }
 .brand-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-right: 12px; }
 /*** ============ Brand sheet End ============ ***/
 
@@ -2267,3 +2302,77 @@ body {
 .logo-donts .icon { color: #B02A37 !important; background: rgba(176, 42, 55, .1) !important; }
 [data-theme="dark"] .logo-donts .icon { color: #FF8A95 !important; }
 /*** ============ Logo End ============ ***/
+
+
+/*** ============ Phone hero: photo collage as a soft backdrop ============ ***/
+/* On phones the collage moves behind the text (enlarged, blurred, under an ivory wash) so the
+ * headline and the Apply button sit in the first screen while the photos still set the mood. */
+@media (max-width: 767.98px) {
+    .home-hero {
+        padding: 3rem 0 3.25rem;
+        isolation: isolate;
+    }
+
+    .home-hero .row > .col-lg-6:last-child {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        margin: 0;
+        padding: 0;
+        pointer-events: none;
+    }
+
+    .home-hero .x-collage {
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        width: 135%;
+        max-width: none;
+        transform: translate(-50%, -50%);
+        filter: blur(1.5px) saturate(1.15);
+        opacity: .9;
+    }
+
+    .home-hero .x-icon {
+        display: none;
+    }
+
+    .home-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+            linear-gradient(180deg,
+                color-mix(in srgb, var(--surface-alt) 80%, transparent) 0%,
+                color-mix(in srgb, var(--surface-alt) 62%, transparent) 50%,
+                color-mix(in srgb, var(--surface-alt) 90%, transparent) 100%);
+    }
+
+    .home-hero .hero-lead {
+        margin-bottom: 1.75rem;
+        font-size: 1.02rem;
+        line-height: 1.6;
+        color: var(--ink);
+        opacity: .85;
+    }
+
+    .home-hero .hero-title {
+        margin-bottom: 1.1rem;
+    }
+
+    .home-hero .hero-eyebrow {
+        margin-bottom: .75rem;
+    }
+
+    .home-hero .hero-actions .btn {
+        margin-bottom: .75rem !important;
+    }
+
+    /* Audience pages: a shorter photo so the call to action comes sooner */
+    .page-hero-img {
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+}
+/*** ============ Phone hero End ============ ***/

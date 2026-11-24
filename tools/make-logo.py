@@ -28,7 +28,7 @@ WORDMARK = "editorial"   # "editorial" (Playfair), "script" (Playball) or "caps"
 FONTS = ROOT / "fonts"
 PLAYFAIR = str(FONTS / "playfair-display-latin-700-normal.woff2")
 PLAYFAIR_ITALIC = str(FONTS / "playfair-display-latin-700-italic.woff2")
-PLAYBALL = str(FONTS / "playball-latin-400-normal.woff2")
+PLAYBALL = str(HERE / "node_modules/@fontsource/playball/files/playball-latin-400-normal.woff2")  # only for WORDMARK = "script"
 
 # Brand colours (see brand.html)
 GOLD, DEEP_GOLD, AZURE, AZURE_GLOW = "#D4A762", "#8F6526", "#1E9BD7", "#5BBEEB"

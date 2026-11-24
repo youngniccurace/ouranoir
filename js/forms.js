@@ -94,6 +94,12 @@
             }
             setError(form, "turnstile", "");
 
+            if (config.previewMode) {
+                show("success", "Preview mode: everything checks out. Nothing was sent.");
+                form.reset();
+                return;
+            }
+
             button.disabled = true;
             button.textContent = "Sending…";
             status.className = "alert d-none mb-0";

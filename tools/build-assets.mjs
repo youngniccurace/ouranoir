@@ -19,11 +19,11 @@ const pages = readdirSync(root).filter((f) => f.endsWith(".html")).map((f) => jo
 // 1. Fonts -----------------------------------------------------------------
 mkdirSync(join(root, "fonts"), { recursive: true });
 const fonts = [
-  ["@fontsource/open-sans/files/open-sans-latin-400-normal.woff2", "open-sans-latin-400-normal.woff2"],
-  ["@fontsource/open-sans/files/open-sans-latin-600-normal.woff2", "open-sans-latin-600-normal.woff2"],
-  ["@fontsource/open-sans/files/open-sans-latin-700-normal.woff2", "open-sans-latin-700-normal.woff2"],
-  ["@fontsource/playball/files/playball-latin-400-normal.woff2", "playball-latin-400-normal.woff2"],
-  // Hero headline (editorial serif from the Lovable design)
+  ["@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-400-normal.woff2", "plus-jakarta-sans-latin-400-normal.woff2"],
+  ["@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-500-normal.woff2", "plus-jakarta-sans-latin-500-normal.woff2"],
+  ["@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-600-normal.woff2", "plus-jakarta-sans-latin-600-normal.woff2"],
+  ["@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff2", "plus-jakarta-sans-latin-700-normal.woff2"],
+  // Logo, headlines and section titles
   ["@fontsource/playfair-display/files/playfair-display-latin-700-normal.woff2", "playfair-display-latin-700-normal.woff2"],
   ["@fontsource/playfair-display/files/playfair-display-latin-700-italic.woff2", "playfair-display-latin-700-italic.woff2"],
 ];

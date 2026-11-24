@@ -47,13 +47,14 @@
   body {
     @apply bg-light min-h-screen;
     color: #404040;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playball', cursive;
-    @apply text-dark font-semibold;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -.015em;
+    @apply text-dark font-bold;
   }
 }
 

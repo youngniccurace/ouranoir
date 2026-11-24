@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 declare global {
   interface Window {
-    OURANOIR_CONFIG?: { gaMeasurementId?: string; turnstileSiteKey?: string; contactEmail?: string };
+    OURANOIR_CONFIG?: { gaMeasurementId?: string; turnstileSiteKey?: string; contactEmail?: string; previewMode?: boolean };
     turnstile?: {
       render: (el: HTMLElement, opts: Record<string, unknown>) => string;
       reset: (id?: string) => void;

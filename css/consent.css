@@ -1,0 +1,126 @@
+/* Cookie consent banner (shared by the main site and the apply/ form). Compact by design. */
+.consent-banner {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1050;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: .7rem .75rem .7rem 1.25rem;
+    border-radius: 999px;
+    background: #050709;
+    color: #e9e6e1;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .3);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: .875rem;
+    line-height: 1.45;
+}
+
+.consent-banner[hidden] {
+    display: none;
+}
+
+.consent-inner {
+    display: flex;
+    align-items: center;
+    gap: .5rem 1rem;
+}
+
+.consent-text {
+    flex: 1 1 auto;
+}
+
+.consent-text p {
+    margin: 0;
+    color: #e9e6e1;
+}
+
+/* Title kept for screen readers only */
+.consent-title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.consent-text a {
+    color: #E2BD85;
+    text-decoration: underline;
+    white-space: nowrap;
+}
+
+[data-palette="blue"] .consent-text a {
+    color: #5BBEEB;
+}
+
+.consent-current:empty {
+    display: none;
+}
+
+.consent-current {
+    font-size: .8rem;
+    color: #c9c4bc !important;
+}
+
+.consent-actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: .5rem;
+}
+
+.consent-btn {
+    min-height: 40px;
+    min-width: 84px;
+    padding: .45rem 1.1rem;
+    border-radius: 999px;
+    border: 1.5px solid #D4A762;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.consent-btn-solid {
+    background: #D4A762;
+    color: #050709;
+}
+
+.consent-btn-outline {
+    background: transparent;
+    color: #fff;
+}
+
+.consent-btn:hover {
+    filter: brightness(1.1);
+}
+
+.consent-btn:focus-visible,
+.consent-text a:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (max-width: 575.98px) {
+    .consent-banner {
+        left: .5rem;
+        right: .5rem;
+        bottom: .5rem;
+        padding: .75rem .85rem;
+        border-radius: 18px;
+        font-size: .82rem;
+    }
+
+    .consent-inner {
+        flex-wrap: wrap;
+    }
+
+    .consent-actions {
+        width: 100%;
+    }
+
+    .consent-btn {
+        flex: 1 1 0;
+    }
+}

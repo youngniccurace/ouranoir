@@ -1,0 +1,18 @@
+{
+  "_comment": "Font Awesome class names used in the content -> Tabler Icons (outline) names. https://tabler.io/icons",
+  "adjust": "contrast-2", "angle-right": "chevron-right", "arrow-right": "arrow-right", "arrow-up": "arrow-up",
+  "balance-scale": "scale", "bars": "menu-2", "bolt": "bolt", "briefcase": "briefcase", "building": "building-skyscraper",
+  "bullhorn": "speakerphone", "camera": "camera", "chart-line": "trending-up", "chart-pie": "chart-pie", "check": "check",
+  "check-circle": "circle-check", "clock": "clock", "cogs": "settings", "coins": "coins", "comments": "messages",
+  "compass": "compass", "crown": "crown", "envelope": "mail", "expand": "arrows-maximize", "file-alt": "file-text",
+  "file-signature": "file-pencil", "flask": "flask", "gem": "diamond", "globe": "world", "graduation-cap": "school",
+  "hand-holding-heart": "heart-handshake", "handshake": "heart-handshake", "hashtag": "hash", "heart": "heart",
+  "info-circle": "info-circle", "key": "key", "layer-group": "stack-2", "lightbulb": "bulb", "lock": "lock",
+  "map-signs": "route", "moon": "moon", "paint-brush": "brush", "pen": "pencil", "phone-alt": "phone", "rocket": "rocket",
+  "search": "search", "seedling": "seedling", "shield-alt": "shield-check", "star": "star", "sun": "sun",
+  "sync-alt": "refresh", "tasks": "list-check", "text-height": "text-size", "times": "x", "tools": "tools",
+  "user-check": "user-check", "user-circle": "user-circle", "user-plus": "user-plus", "user-secret": "spy",
+  "user-shield": "user-shield", "user-tie": "user-star", "users": "users", "video": "video",
+  "message-heart": "message-heart", "sparkles": "sparkles",
+  "instagram": "brand-instagram", "twitter": "brand-x", "tiktok": "brand-tiktok"
+}

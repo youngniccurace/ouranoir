@@ -1,0 +1,136 @@
+
+/* Fonts are self-hosted by the main site: ../css/fonts.css (linked in index.html) */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 41 100% 98%;
+    --foreground: 0 0% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 2% 3%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 2% 3%;
+
+    --primary: 36 61% 61%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 0 0% 60%;
+    --secondary-foreground: 215 2% 3%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 215 2% 3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 2% 45% / 0.35;
+    --input: 36 50% 34% / 0.75;
+    --ring: 36 61% 61%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-light min-h-screen;
+    color: #404040;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -.015em;
+    @apply text-dark font-bold;
+  }
+}
+
+@layer utilities {
+  .form-shadow {
+    box-shadow: 0px 8px 24px rgba(212, 167, 98, 0.15);
+  }
+  
+  .bg-light {
+    background-color: #FFFCF8;
+  }
+  
+  .text-dark {
+    color: #050709;
+  }
+  
+  .text-secondary {
+    color: #5F5F5F; /* was #9A9A9A (2.7:1); now 6.2:1 on #FFFCF8 */
+  }
+  
+  .bg-primary {
+    background-color: #D4A762;
+  }
+  
+  .text-primary {
+    color: #8F6526; /* text on light backgrounds; brand gold #D4A762 is only 2.2:1 */
+  }
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 3px solid #050709;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark mode: follows the main site's choice (../js/theme.js adds .dark to <html>) */
+.dark {
+  color-scheme: dark;
+  --background: 216 18% 5%;
+  --foreground: 30 20% 94%;
+  --card: 216 17% 10%;
+  --card-foreground: 30 20% 94%;
+  --popover: 216 17% 10%;
+  --popover-foreground: 30 20% 94%;
+  --muted: 216 14% 15%;
+  --muted-foreground: 213 10% 75%;
+  --accent: 216 14% 15%;
+  --accent-foreground: 30 20% 94%;
+  --border: 0 0% 100% / 0.12;
+  --input: 36 40% 55% / 0.6;
+}
+.dark body { color: #D9DDE2; }
+.dark .bg-light { background-color: #0B0D10; }
+.dark .text-dark, .dark h1, .dark h2, .dark h3, .dark h4, .dark .text-gray-900 { color: #F4F1EC; }
+.dark .text-secondary, .dark .text-gray-600, .dark .text-gray-700 { color: #B9C0C8; }
+.dark .text-primary { color: #E2BD85; }
+.dark .bg-white, .dark .bg-gray-50, .dark .bg-gray-100 { background-color: #151920; }
+.dark .text-gray-600.bg-gray-100 { color: #B9C0C8; }
+.dark input, .dark textarea, .dark button[role="combobox"] { background-color: #0B0D10; color: #F4F1EC; }
+.dark .form-shadow { box-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 12px 40px rgba(0,0,0,.5); }
+.dark [class*="text-[#8F6526]"] { color: #E2BD85; }
+.dark [class*="border-[#8F6526]"] { border-color: #E2BD85; }
+.dark [class*="text-[#B02A37]"] { color: #FF8A95; }
+.dark [class*="bg-[#FDECEE]"] { background-color: #3A1519; }
+.dark [class*="text-[#7A1D27]"] { color: #FFB3BB; }
+.dark :focus-visible { outline-color: #FFFFFF; }
+
+/* OuraNoir logo (../img/logo.svg) - colours follow light/dark mode */
+:root { --logo-ring: #D4A762; --logo-ink: #050709; --logo-oura: #8F6526; --logo-spark: #1E9BD7; }
+.dark { --logo-ink: #F4F1EC; --logo-oura: #D4A762; --logo-spark: #5BBEEB; }
+.logo-lockup { display: block; width: 190px; height: 43px; margin: 0 auto; }

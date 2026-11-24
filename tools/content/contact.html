@@ -1,0 +1,129 @@
+        <!-- Page Hero Start -->
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <p class="hero-eyebrow">Contact</p>
+                        <h1 id="page-title" class="page-hero-title">Let's talk, <em>confidentially.</em></h1>
+                        <p class="hero-lead">Questions about working with us? Send a message and a real person will reply within 2&ndash;3 business days.</p>
+                        <div class="hero-actions">
+                            <a href="#contactForm" class="btn btn-primary rounded-pill py-3 px-4 px-md-5 me-3 mb-3">Send A Message <i class="fas fa-arrow-right ps-2"></i></a>
+                            <a href="apply/" class="btn btn-outline-dark rounded-pill py-3 px-4 px-md-5 mb-3">Apply As A Creator</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="page-hero-media">
+                            {{img:page-contact:page-hero-img:eager}}
+                            <div class="page-hero-chip">
+                                <i class="fas fa-lock"></i>
+                                <span><strong>Confidential</strong>Every message stays private</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Hero End -->
+
+
+        <!-- Contact Start -->
+        <div class="container-fluid py-6">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-7 wow bounceInUp" data-wow-delay="0.1s">
+                        <div class="p-5 bg-light rounded contact-form">
+                            <small class="d-inline-block fw-bold text-dark text-uppercase bg-white border border-primary rounded-pill px-4 py-1 mb-3">Get In Touch</small>
+                            <h2 class="display-5 mb-4">Let's Start A <span class="text-primary">Conversation</span></h2>
+                            <p class="mb-4">Want to join as a creator? The quickest way is our <a href="apply/" class="fw-bold">application form</a>. For anything else, use the form below.</p>
+                            <form id="contactForm" action="contact.php" method="post" novalidate>
+                                <!-- Spam protection 1: honeypot. Hidden from people (and screen readers); bots fill it in. -->
+                                <div class="hp-field" aria-hidden="true">
+                                    <label for="website">Leave this field empty</label>
+                                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                                </div>
+                                <!-- Spam protection 2: time trap. Filled in by js/forms.js; submissions made too quickly are rejected. -->
+                                <input type="hidden" name="form_started" value="">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label text-dark">Your Name <span class="text-danger" aria-hidden="true">*</span></label>
+                                        <input type="text" id="name" name="name" class="form-control p-3 border-primary bg-white" placeholder="Your name" autocomplete="name" minlength="2" maxlength="100" required aria-describedby="name-error">
+                                        <div class="invalid-feedback" id="name-error" data-msg-required="Please enter your name." data-msg-short="Your name must be at least 2 characters."></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label text-dark">Your Email <span class="text-danger" aria-hidden="true">*</span></label>
+                                        <input type="email" id="email" name="email" class="form-control p-3 border-primary bg-white" placeholder="you@example.com" autocomplete="email" maxlength="254" required aria-describedby="email-error">
+                                        <div class="invalid-feedback" id="email-error" data-msg-required="Please enter your email address." data-msg-type="Please enter a valid email address, like name@example.com."></div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="subject" class="form-label text-dark">Subject</label>
+                                        <select id="subject" name="subject" class="form-select p-3 border-primary bg-white" aria-describedby="subject-error">
+                                            <option>General question</option>
+                                            <option>Joining as a creator</option>
+                                            <option>I'm already a creator with OuraNoir</option>
+                                            <option>Business / partnership enquiry</option>
+                                            <option>Other</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="subject-error"></div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label text-dark">Message <span class="text-danger" aria-hidden="true">*</span></label>
+                                        <textarea id="message" name="message" class="form-control p-3 border-primary bg-white" rows="5" placeholder="Tell us about your goals, or ask us anything..." minlength="10" maxlength="5000" required aria-describedby="message-error"></textarea>
+                                        <div class="invalid-feedback" id="message-error" data-msg-required="Please enter your message." data-msg-short="Please write a little more (at least 10 characters)."></div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="privacy" name="privacy" value="yes" required aria-describedby="privacy-error">
+                                            <label class="form-check-label" for="privacy">I agree that OuraNoir may use these details to reply to my message, as described in the <a href="privacy.html">Privacy Policy</a>. <span class="text-danger" aria-hidden="true">*</span></label>
+                                            <div class="invalid-feedback" id="privacy-error" data-msg-required="Please confirm you've read the Privacy Policy."></div>
+                                        </div>
+                                    </div>
+                                    <!-- Spam protection 3: Cloudflare Turnstile. Only shown when a site key is set in js/site-config.js -->
+                                    <div class="col-12">
+                                        <div class="turnstile-slot" data-turnstile></div>
+                                        <div class="invalid-feedback d-block" id="turnstile-error" role="alert"></div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div id="contactStatus" class="alert d-none mb-0" role="status" aria-live="polite"></div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="w-100 btn btn-primary p-3 rounded-pill" type="submit">Send Message</button>
+                                        <p class="small mt-3 mb-0 text-center"><span class="text-danger" aria-hidden="true">*</span> Required field</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 wow bounceInUp" data-wow-delay="0.3s">
+                        <div class="d-flex flex-column gap-4 h-100">
+                            <div class="contact-card">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h3 class="h5 mb-1">Email</h3>
+                                    <p class="mb-0"><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h3 class="h5 mb-1">Response Time</h3>
+                                    <p class="mb-0">We aim to reply within 2&ndash;3 business days.</p>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <i class="fas fa-lock"></i>
+                                <div>
+                                    <h3 class="h5 mb-1">Confidential</h3>
+                                    <p class="mb-0">Everything you send us is kept private.</p>
+                                </div>
+                            </div>
+                            <div class="noir-card flex-grow-1">
+                                <p class="noir-tagline mb-3">Ready to join?</p>
+                                <p class="position-relative text-white-50 mb-4">Skip the back-and-forth and send us your application directly. It takes about 5 minutes.</p>
+                                <a href="apply/" class="btn btn-outline-primary py-3 px-5 rounded-pill position-relative">Start Your Application<i class="fas fa-arrow-right ps-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->

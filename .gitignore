@@ -1,0 +1,12 @@
+# Dependencies (fan-form-flow/ and tools/)
+node_modules/
+
+# Server-side secrets: copy private/config.example.php -> private/config.local.php
+private/config.local.php
+.env
+.env.*
+
+# Applications, ID documents, messages and rate-limit data saved by the form handlers.
+# Private personal data: must never be committed.
+private/storage/
+applications/

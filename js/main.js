@@ -63,6 +63,21 @@
         });
     }
 
+    // --- Hand-drawn doodles draw themselves when they come into view ---
+    var doodles = Array.prototype.slice.call(document.querySelectorAll(".doodle"));
+    if (doodles.length && "IntersectionObserver" in window && !reduceMotion) {
+        document.documentElement.classList.add("doodles-ready");
+        var drawObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-drawn");
+                    drawObserver.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: "0px 0px -8% 0px" });
+        doodles.forEach(function (d) { drawObserver.observe(d); });
+    }
+
     // --- Back to top button ---
     var toTop = document.querySelector(".back-to-top");
     if (toTop) {

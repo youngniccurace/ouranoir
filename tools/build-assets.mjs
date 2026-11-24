@@ -23,6 +23,8 @@ const fonts = [
   ["@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-500-normal.woff2", "plus-jakarta-sans-latin-500-normal.woff2"],
   ["@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-600-normal.woff2", "plus-jakarta-sans-latin-600-normal.woff2"],
   ["@fontsource/plus-jakarta-sans/files/plus-jakarta-sans-latin-700-normal.woff2", "plus-jakarta-sans-latin-700-normal.woff2"],
+  // Handwritten notes next to calls to action
+  ["@fontsource/caveat/files/caveat-latin-600-normal.woff2", "caveat-latin-600-normal.woff2"],
   // Logo, headlines and section titles
   ["@fontsource/playfair-display/files/playfair-display-latin-700-normal.woff2", "playfair-display-latin-700-normal.woff2"],
   ["@fontsource/playfair-display/files/playfair-display-latin-700-italic.woff2", "playfair-display-latin-700-italic.woff2"],

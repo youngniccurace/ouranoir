@@ -47,3 +47,12 @@
     font-display: swap;
     src: url(../fonts/playfair-display-latin-700-italic.woff2) format('woff2');
 }
+
+/* Handwritten notes (sparingly: next to calls to action and doodles) */
+@font-face {
+    font-family: 'Caveat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(../fonts/caveat-latin-600-normal.woff2) format('woff2');
+}

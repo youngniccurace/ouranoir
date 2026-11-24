@@ -1,15 +1,29 @@
-        <!-- Page Header Start -->
-        <div class="container-fluid bg-light py-6 my-6 mt-0">
-            <div class="container text-center animated bounceInDown">
-                <h1 class="display-1 mb-4">About Us</h1>
-                <p class="fs-5 mb-4 mx-auto" style="max-width: 720px;">We're a management team that takes care of the business side of being a creator, so you can focus on what you do best.</p>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item text-dark" aria-current="page">About</li>
-                </ol>
+        <!-- Page Hero Start -->
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <p class="hero-eyebrow">About Us</p>
+                        <h1 id="page-title" class="page-hero-title">The team behind <em>ambitious creators.</em></h1>
+                        <p class="hero-lead">We're a creator management team that runs the business side of being a creator &mdash; management, chatting, marketing and traffic, all in-house.</p>
+                        <div class="hero-actions">
+                            <a href="apply/" class="btn btn-primary rounded-pill py-3 px-4 px-md-5 me-3 mb-3">Start Your Application <i class="fas fa-arrow-right ps-2"></i></a>
+                            <a href="#values" class="btn btn-outline-dark rounded-pill py-3 px-4 px-md-5 mb-3">What We Stand For</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="page-hero-media">
+                            {{img:page-about:page-hero-img:eager}}
+                            <div class="page-hero-chip">
+                                <i class="fas fa-users"></i>
+                                <span><strong>One in-house team</strong>Management, chatters, marketing &amp; traffic</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <!-- Page Header End -->
+        </section>
+        <!-- Page Hero End -->
 
 
         <!-- Story Start -->
@@ -38,7 +52,7 @@
 
 
         <!-- Values Start -->
-        <div class="container-fluid py-6 bg-light">
+        <div class="container-fluid py-6 bg-light" id="values">
             <div class="container">
                 <div class="text-center wow bounceInUp" data-wow-delay="0.1s">
                     <small class="d-inline-block fw-bold text-dark text-uppercase bg-white border border-primary rounded-pill px-4 py-1 mb-3">Our Values</small>
@@ -134,12 +148,4 @@
         <!-- Why Us End -->
 
 
-        <!-- Call To Action Start -->
-        <div class="container-fluid cta-noir py-6">
-            <div class="container text-center wow bounceInUp" data-wow-delay="0.1s">
-                <h2 class="display-4 text-white mb-4">Ready To <span class="text-primary">Grow?</span></h2>
-                <p class="fs-5 text-white-50 mb-5">We only take on creators we believe in. If you're serious about scaling, apply today &mdash; it's free, confidential and takes about 5 minutes.</p>
-                <a href="apply/" class="btn btn-primary py-3 px-5 rounded-pill fs-5">Start Your Application <i class="fas fa-arrow-right ps-2"></i></a>
-            </div>
-        </div>
-        <!-- Call To Action End -->
+{{cta:about}}

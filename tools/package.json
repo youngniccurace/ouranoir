@@ -9,6 +9,7 @@
     "serve": "cd .. && php -S 127.0.0.1:8000 tools/dev-router.php"
   },
   "devDependencies": {
+    "@fontsource/caveat": "^5.3.0",
     "@fontsource/playball": "^5.1.0",
     "@fontsource/playfair-display": "^5.3.0",
     "@fontsource/plus-jakarta-sans": "^5.3.0",

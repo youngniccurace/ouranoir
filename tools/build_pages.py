@@ -50,7 +50,7 @@ PAGES = [
     {
         "file": "index.html", "content": "index", "nav": "home", "path": "",
         "title": "OuraNoir | Creator Management Agency for OnlyFans Creators & Agencies",
-        "description": "OuraNoir is a creator management agency: we manage OnlyFans creators, support agencies with chatters and traffic specialists, hire remote talent and build partnerships.",
+        "description": "Creator-founded OnlyFans management with a 70+ person in-house team: strategy, 24/7 chatting, marketing and traffic. Written contracts, you own your account.",
         "priority": "1.0",
     },
     {
@@ -292,7 +292,7 @@ def footer() -> str:
                 <div class="footer-grid">
                     <div class="footer-brand">
                         <a href="index.html" aria-label="OuraNoir home"><svg class="logo-lockup logo-lockup-footer" role="img" aria-label="OuraNoir"><use href="img/logo.svg#logo-lockup"></use></svg></a>
-                        <p>Creator management with one experienced in-house team: management, chatting, marketing and traffic under one roof.</p>
+                        <p>Creator-founded management with a 70+ person in-house team: management, chatting, marketing and traffic under one roof, 24/7.</p>
                         <ul class="footer-trust">
                             <li><i class="fas fa-file-signature"></i>Written contracts</li>
                             <li><i class="fas fa-key"></i>You own your account</li>

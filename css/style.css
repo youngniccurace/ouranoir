@@ -3306,4 +3306,103 @@ body {
         transform: rotate(-3deg);
     }
 }
+/* --- Proof bar (real numbers, under the hero) --- */
+.proof-bar {
+    padding: 1.5rem 0;
+    background: #0A0F17;
+}
+
+.proof-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.proof-list li {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
+.proof-list strong {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    line-height: 1.1;
+    color: #D4A762;
+}
+
+.proof-list span {
+    font-size: .85rem;
+    color: #C9D1DA;
+}
+
+[data-theme="dark"] .proof-bar {
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    background: #0D131D;
+}
+
+/* --- Founder story --- */
+.story-card {
+    position: relative;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    border-radius: 28px;
+    background: var(--surface-alt);
+    border: 1px solid var(--line);
+}
+
+.story-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 2.5rem;
+}
+
+.story-columns p {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.story-today {
+    margin: 1.75rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--line);
+    font-size: 1.05rem;
+    color: var(--ink);
+}
+
+.story-note {
+    margin-top: 1.25rem;
+}
+
+.story-flower {
+    position: absolute;
+    top: 1.75rem;
+    right: 2rem;
+    width: 64px;
+    height: 64px;
+}
+
+@media (max-width: 767.98px) {
+    .proof-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 1.25rem;
+    }
+
+    .story-columns {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .story-flower {
+        width: 44px;
+        height: 44px;
+        top: 1rem;
+        right: 1rem;
+    }
+}
 /*** ================= v3 End ================= ***/

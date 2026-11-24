@@ -13,7 +13,7 @@ React application form, with small PHP handlers for the forms.
 | `js/theme.js` | Dark mode (saved choice or device setting) and colour-palette previews. |
 | `tools/content/` | The body content of each page. |
 | `tools/build_pages.py` | Wraps content in the shared head (meta, Open Graph/Twitter, favicons), navbar and footer; writes `sitemap.xml`, `robots.txt`, `site.webmanifest`. **Site settings (domain, email, social links) are at the top.** |
-| `tools/build-assets.mjs` | Self-hosted fonts, SVG icon sprite, trimmed Bootstrap, bundled `css/site.min.css`, minified `js/site.min.js` / `js/forms.min.js`. |
+| `tools/build-assets.mjs` | Self-hosted fonts, SVG icon sprite ([Tabler Icons](https://tabler.io/icons); map in `tools/icon-map.json`), trimmed Bootstrap, bundled `css/site.min.css`, minified `js/site.min.js` / `js/forms.min.js`. |
 | `tools/make-images.mjs` | One-off generator for favicons and the 1200×630 social image. |
 | `css/style.css`, `css/consent.css`, `css/fonts.css`, `js/*.js` | Source styles/scripts (bundled into the `.min` files by the build). |
 | `js/site-config.js` | **Public** IDs: Google Analytics measurement ID, Cloudflare Turnstile site key, contact email. |

@@ -866,13 +866,28 @@ main:focus {
 }
 
 /* --- SVG icons (replace the Font Awesome icon font) ----------------------- */
+/* Tabler Icons are outline (stroke) icons: colour + weight come from here */
 .icon {
     display: inline-block;
-    width: 1em;
-    height: 1em;
-    fill: currentColor;
-    vertical-align: -.125em;
+    width: 1.15em;
+    height: 1.15em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -.2em;
     overflow: visible;
+}
+
+.icon-3x, .icon-4x, .icon-5x, .icon-7x {
+    stroke-width: 1.4;
+}
+
+/* Tabler "filled" icons are solid shapes */
+.icon.icon-filled {
+    fill: currentColor;
+    stroke: none;
 }
 
 .icon-fw { width: 1.25em; }
@@ -1482,25 +1497,29 @@ body {
     color: var(--accent);
 }
 
-/* X collage: four diamonds on the corners, one large in the middle, icons in the gaps */
+/* X collage (proportions of the original template hero): four diamonds reaching the corners,
+ * a large one in the middle, a thin even gap between every pair, and big filled silhouettes
+ * in the four open spaces. Geometry, in % of the square:
+ *   corner side 30.5 (centred at 21.5 / 78.5), centre side 45 (centred at 50)
+ *   diagonal centre distance 28.5 * 1.414 = 40.3; gap = 40.3 - (30.5 + 45) / 2 = 2.55% on every edge. */
 .x-collage {
     position: relative;
     width: 100%;
-    max-width: 560px;
+    max-width: 580px;
     aspect-ratio: 1 / 1;
     margin: 0 auto;
 }
 
 .x-item {
     position: absolute;
-    width: 38%;
+    width: 30.5%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: 14%;
-    transform: rotate(45deg);
-    border: 4px solid var(--accent);
+    border-radius: 6%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border: 4px solid var(--frame, var(--accent));
     background: var(--surface-card);
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 18px 40px rgba(5, 7, 9, .14);
 }
 
 .x-item img {
@@ -1512,41 +1531,43 @@ body {
     transform: rotate(-45deg);
 }
 
-.x-tl { top: 3%; left: 3%; }
-.x-tr { top: 3%; right: 3%; }
-.x-bl { bottom: 3%; left: 3%; }
-.x-br { bottom: 3%; right: 3%; }
+.x-tl { top: 21.5%; left: 21.5%; }
+.x-tr { top: 21.5%; left: 78.5%; }
+.x-bl { top: 78.5%; left: 21.5%; }
+.x-br { top: 78.5%; left: 78.5%; }
 
 .x-center {
     top: 50%;
     left: 50%;
-    width: 46%;
+    width: 45%;
     z-index: 2;
-    transform: translate(-50%, -50%) rotate(45deg);
     border-width: 5px;
-    box-shadow: 0 25px 60px rgba(5, 7, 9, .25);
+    box-shadow: 0 25px 60px rgba(5, 7, 9, .22);
 }
 
+/* Icons sit in the four open spaces between the diamonds (no bubbles, like the template) */
 .x-icon {
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3.6rem;
-    height: 3.6rem;
-    border-radius: 50%;
-    background: var(--surface-card);
+    width: 17%;
+    aspect-ratio: 1 / 1;
     color: var(--accent);
-    font-size: 1.35rem;
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--line);
+    opacity: .34;
+    transform: translate(-50%, -50%);
 }
 
-.x-icon-top { top: 6%; left: 50%; transform: translateX(-50%); }
-.x-icon-bottom { bottom: 6%; left: 50%; transform: translateX(-50%); }
-.x-icon-left { left: 6%; top: 50%; transform: translateY(-50%); }
-.x-icon-right { right: 6%; top: 50%; transform: translateY(-50%); }
+.x-icon .icon {
+    width: 100%;
+    height: 100%;
+}
+
+.x-icon-top { top: 8%; left: 50%; }
+.x-icon-bottom { top: 92%; left: 50%; }
+.x-icon-left { top: 50%; left: 8%; }
+.x-icon-right { top: 50%; left: 92%; }
 
 [data-palette="spectrum"] .x-icon-left,
 [data-palette="spectrum"] .x-icon-right {
@@ -1562,7 +1583,7 @@ body {
 
     @keyframes x-float {
         0%, 100% { margin-top: 0; }
-        50% { margin-top: -6px; }
+        50% { margin-top: -8px; }
     }
 }
 
@@ -1753,7 +1774,7 @@ body {
     height: 3.5rem;
     border-radius: 16px;
     background: var(--accent-soft);
-    font-size: 1.4rem;
+    font-size: 1.75rem;
 }
 
 /* --- Photos with a gold frame --- */
@@ -1931,11 +1952,6 @@ body {
         padding: 3rem 0 4rem;
     }
 
-    .x-icon {
-        width: 2.8rem;
-        height: 2.8rem;
-        font-size: 1.05rem;
-    }
 
     .page-hero-media::before {
         inset: -10px 10px 10px -10px;
@@ -2068,6 +2084,10 @@ body {
     box-shadow: 0 25px 60px rgba(0, 0, 0, .6);
 }
 
+[data-theme="dark"] .x-icon {
+    opacity: .5;
+}
+
 [data-theme="dark"] .service-item .service-content-icon p {
     color: var(--text-muted-aa);
 }
@@ -2080,13 +2100,6 @@ body {
     color: #FF9ACB; /* 8:1 on the dark background */
 }
 /* Palette B: gold and azure each keep their own job */
-[data-palette="blue"] .x-item {
-    border-color: var(--frame);
-}
-
-[data-palette="blue"] .x-icon {
-    color: var(--accent);
-}
 
 [data-palette="blue"] .framed-photo::after {
     border-color: var(--frame);

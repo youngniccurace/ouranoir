@@ -1,6 +1,6 @@
 // Builds static assets (run via `npm run build` in tools/):
 //  1. self-hosted fonts      -> fonts/*.woff2      (no Google Fonts request, GDPR friendly)
-//  2. SVG icon sprite        -> img/icons.svg      (only the icons the pages use, instead of a 150KB+ icon font)
+//  2. SVG icon sprite        -> img/icons.svg      (Tabler Icons, only the ones the pages use)
 //  3. trimmed Bootstrap CSS  -> css/bootstrap.min.css (unused rules removed with PurgeCSS)
 //  4. one render-blocking stylesheet -> css/site.min.css (fonts + bootstrap + style + consent, minified)
 //  5. minified scripts       -> js/site.min.js (consent + analytics + main), js/forms.min.js
@@ -30,24 +30,30 @@ const fonts = [
 for (const [src, dest] of fonts) copyFileSync(mod(src), join(root, "fonts", dest));
 console.log(`fonts: ${fonts.length} files`);
 
-// 2. Icon sprite ----------------------------------------------------------
+// 2. Icon sprite (Tabler Icons, outline) ------------------------------------
+// Stroke colour/width come from CSS (.icon in css/style.css) so icons follow the theme.
 const used = new Set();
 for (const file of pages) {
-  for (const m of readFileSync(file, "utf8").matchAll(/icons\.svg#(fas|fab)-([a-z0-9-]+)/g)) used.add(`${m[1]}-${m[2]}`);
+  for (const m of readFileSync(file, "utf8").matchAll(/icons\.svg(?:\?v=[a-f0-9]+)?#(tif?)-([a-z0-9-]+)/g)) used.add(`${m[1]}-${m[2]}`);
 }
 const symbols = [...used].sort().map((id) => {
-  const [style, ...rest] = id.split("-");
-  const name = rest.join("-");
-  const svg = readFileSync(mod(`@fortawesome/fontawesome-free/svgs/${style === "fab" ? "brands" : "solid"}/${name}.svg`), "utf8");
-  const viewBox = svg.match(/viewBox="([^"]+)"/)[1];
-  const inner = svg.replace(/^[\s\S]*?<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "").replace(/<!--[\s\S]*?-->/g, "");
-  return `<symbol id="${id}" viewBox="${viewBox}">${inner}</symbol>`;
+  const filled = id.startsWith("tif-");
+  const name = id.replace(/^tif?-/, "");
+  const svg = readFileSync(mod(`@tabler/icons/icons/${filled ? "filled" : "outline"}/${name}.svg`), "utf8");
+  const inner = svg
+    .replace(/^[\s\S]*?<svg[^>]*>/, "")
+    .replace(/<\/svg>\s*$/, "")
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<path stroke="none" d="M0 0h24v24H0z" fill="none"\s*\/>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  return `<symbol id="${id}" viewBox="0 0 24 24">${inner}</symbol>`;
 });
 writeFileSync(
   join(root, "img/icons.svg"),
-  `<svg xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0) -->${symbols.join("")}</svg>\n`
+  `<svg xmlns="http://www.w3.org/2000/svg"><!-- Tabler Icons (MIT License) https://tabler.io/icons -->${symbols.join("")}</svg>\n`
 );
-console.log(`icons: ${symbols.length} symbols`);
+console.log(`icons: ${symbols.length} Tabler symbols`);
 
 // 3. Trim Bootstrap -------------------------------------------------------
 const [purged] = await new PurgeCSS().purge({

@@ -398,18 +398,25 @@ ICON_RE = re.compile(r'<(?:i|span) class="(fas|fab|fa) fa-([a-z0-9-]+)([^"]*)"><
 SIZE_CLASSES = {"fa-2x", "fa-3x", "fa-4x", "fa-5x", "fa-7x", "fa-fw"}
 
 
+ICON_MAP = {k: v for k, v in json.loads((Path(__file__).resolve().parent / "icon-map.json").read_text()).items() if not k.startswith("_")}
+
+
 def icon_svg(m: re.Match) -> str:
-    """Icon font -> inline SVG from a tiny sprite (img/icons.svg). Decorative, hidden from screen readers."""
-    style = "fab" if m.group(1) == "fab" else "fas"
+    """Icon class (fa-*) -> inline SVG from the Tabler Icons sprite (img/icons.svg). Decorative, hidden from screen readers."""
+    name = ICON_MAP.get(m.group(2))
+    if name is None:
+        raise SystemExit(f"Icon 'fa-{m.group(2)}' has no Tabler mapping - add it to tools/icon-map.json")
     extra = [c for c in m.group(3).split() if c]
     classes = " ".join(["icon"] + [c.replace("fa-", "icon-") if c in SIZE_CLASSES else c for c in extra])
-    return f'<svg class="{classes}" aria-hidden="true" focusable="false"><use href="img/icons.svg#{style}-{m.group(2)}"></use></svg>'
+    prefix = "tif" if "icon-filled" in extra else "ti"   # Tabler filled vs outline
+    return f'<svg class="{classes}" aria-hidden="true" focusable="false"><use href="img/icons.svg#{prefix}-{name}"></use></svg>'
 
 
 def transform(body: str) -> str:
     body = body.replace('img/logo.svg#', versioned('img/logo.svg') + '#')
     body = IMG_RE.sub(img_tag, body)
     body = ICON_RE.sub(icon_svg, body)
+    body = body.replace('img/icons.svg#', versioned('img/icons.svg') + '#')
     # Entrance animations: animate.css/WOW.js replaced by a lightweight reveal-on-scroll (js/main.js).
     # Content above the fold is no longer animated so it paints immediately.
     body = re.sub(r"\s*\banimated (?:bounceInDown|bounceInLeft|bounceInUp|zoomIn|fadeInUp)\b", "", body)

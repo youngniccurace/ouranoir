@@ -13,6 +13,7 @@
     "@fontsource/playball": "^5.1.0",
     "@fontsource/playfair-display": "^5.3.0",
     "@fortawesome/fontawesome-free": "5.15.4",
+    "@tabler/icons": "^3.53.0",
     "esbuild": "^0.24.2",
     "purgecss": "^6.0.0"
   }

@@ -12,11 +12,11 @@ const Header = ({ className }: HeaderProps) => {
         Skip to form
       </a>
       <div className="container mx-auto px-4">
-        <a href="../index.html" className="inline-flex items-center min-h-[44px] mb-1 text-3xl text-primary font-playball" aria-label="OuraNoir home">
-          Oura<span className="text-dark">Noir</span>
+        <a href="../index.html" className="inline-flex items-center min-h-[44px] mb-2" aria-label="OuraNoir home">
+          <svg className="logo-lockup" role="img" aria-label="OuraNoir"><use href={`../img/logo.svg?v=${__LOGO_VERSION__}#logo-lockup`} /></svg>
         </a>
         <h1 className="text-3xl md:text-4xl font-normal text-dark font-playball">
-          Apply to Join <span className="text-[#A97A31]">OuraNoir</span>
+          Start Your <span className="text-[#A97A31]">Application</span>
         </h1>
         <p className="mt-1 text-secondary max-w-2xl mx-auto text-sm">
           Maximize your earning potential on OnlyFans with our exclusive management team. 18+ only &middot; Takes about 5 minutes.

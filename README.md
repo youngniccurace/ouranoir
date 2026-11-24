@@ -59,10 +59,28 @@ Upload everything **except** `fan-form-flow/`, `tools/`, `scss/`, `deploy/` and 
 ## Dark mode and colour palettes
 
 - Visitors can switch light/dark with the moon/sun button; otherwise the device setting is used.
-- Colour prototypes can be previewed on any page with `?palette=gold` (default), `?palette=blue`,
+- The live palette is **B, "Noir, Gold & Azure"** (`DEFAULT_PALETTE` in `js/theme.js`, also set on `<html>` by the build).
+- Other prototypes can be previewed on any page with `?palette=gold`, `?palette=blue`,
   `?palette=pink` or `?palette=spectrum` (remembered for that browser tab only).
   To adopt one permanently, change `DEFAULT_PALETTE` in `js/theme.js`, then run the build.
   The palette colours are the `[data-palette=...]` blocks in `css/style.css`.
+
+## Logo
+
+The "Aura Ring" logo (gold halo + editorial N + azure glint, with the Playfair "Oura Noir" wordmark) is
+generated from the brand fonts by `tools/make-logo.py`, so it is pure vector and identical everywhere.
+
+- Site: `img/logo.svg` sprite (`<use href="img/logo.svg#logo-lockup">`); colours follow light/dark mode via CSS variables.
+- Downloads for social media / documents: `img/brand/` (light & dark logo, symbol, 1024px profile pictures).
+- Favicons and the social preview image are rendered from these files by `tools/make-images.mjs`.
+- To regenerate (e.g. try `WORDMARK = "script"` or `"caps"`):
+
+```bash
+pip install fonttools brotli uharfbuzz
+python3 tools/make-logo.py && cd tools && npm run images && npm run build
+```
+
+Usage rules (clear space, minimum size, don'ts) are on `brand.html`.
 
 ## Replacing the stock photos
 

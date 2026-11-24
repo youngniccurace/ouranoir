@@ -128,3 +128,8 @@
 .dark [class*="bg-[#FDECEE]"] { background-color: #3A1519; }
 .dark [class*="text-[#7A1D27]"] { color: #FFB3BB; }
 .dark :focus-visible { outline-color: #FFFFFF; }
+
+/* OuraNoir logo (../img/logo.svg) - colours follow light/dark mode */
+:root { --logo-ring: #D4A762; --logo-ink: #050709; --logo-oura: #8F6526; --logo-spark: #1E9BD7; }
+.dark { --logo-ink: #F4F1EC; --logo-oura: #D4A762; --logo-spark: #5BBEEB; }
+.logo-lockup { display: block; width: 190px; height: 43px; margin: 0 auto; }

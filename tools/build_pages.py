@@ -190,7 +190,7 @@ def head(page: dict) -> str:
         }
         jsonld = f'\n        <script type="application/ld+json">{json.dumps(org, ensure_ascii=False)}</script>'
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-palette="blue">
 
     <head>
         <meta charset="utf-8">
@@ -248,7 +248,7 @@ def navbar(active: str) -> str:
             <div class="container">
                 <nav class="navbar navbar-light navbar-expand-lg py-4" aria-label="Main">
                     <a href="index.html" class="navbar-brand" aria-label="OuraNoir home">
-                        <span class="brand-logo text-primary fw-bold">Oura<span class="text-dark">Noir</span></span>
+                        <svg class="logo-lockup" role="img" aria-label="OuraNoir"><use href="img/logo.svg#logo-lockup"></use></svg>
                     </a>
                     <button class="navbar-toggler py-2 px-3" type="button" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="fa fa-bars text-primary"></span>
@@ -293,7 +293,7 @@ def footer() -> str:
                 <div class="row g-5">
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-item">
-                            <p class="brand-logo text-primary mb-3">Oura<span class="text-dark">Noir</span></p>
+                            <p class="mb-3"><svg class="logo-lockup logo-lockup-footer" role="img" aria-label="OuraNoir"><use href="img/logo.svg#logo-lockup"></use></svg></p>
                             <p class="lh-lg mb-4">A full-service management agency helping creators grow their brand, their audience and their income &mdash; on their own terms.</p>{social_block}
                         </div>
                     </div>
@@ -407,6 +407,7 @@ def icon_svg(m: re.Match) -> str:
 
 
 def transform(body: str) -> str:
+    body = body.replace('img/logo.svg#', versioned('img/logo.svg') + '#')
     body = IMG_RE.sub(img_tag, body)
     body = ICON_RE.sub(icon_svg, body)
     # Entrance animations: animate.css/WOW.js replaced by a lightweight reveal-on-scroll (js/main.js).

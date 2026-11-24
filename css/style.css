@@ -2102,7 +2102,8 @@ body {
 }
 
 [data-palette="blue"] .bg-dark a:not(.btn),
-[data-palette="blue"] .cta-noir a:not(.btn) {
+[data-palette="blue"] .cta-noir a:not(.btn),
+[data-palette="blue"] .consent-text a {
     color: #5BBEEB !important;
 }
 
@@ -2196,3 +2197,60 @@ body {
 .brand-type-open { margin: 0; font-weight: 600; font-size: 2.2rem; color: var(--ink); }
 .brand-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-right: 12px; }
 /*** ============ Brand sheet End ============ ***/
+
+
+/*** ============ Logo (img/logo.svg, built by tools/make-logo.py) ============ ***/
+/* Logo colours: Deep Gold "Oura" + Noir on light; Champagne Gold + Ivory on dark */
+:root {
+    --logo-ring: #D4A762;
+    --logo-ink: #050709;
+    --logo-oura: #8F6526;
+    --logo-spark: #1E9BD7;
+}
+
+[data-theme="dark"] {
+    --logo-ink: #F4F1EC;
+    --logo-oura: #D4A762;
+    --logo-spark: #5BBEEB;
+}
+
+.logo-lockup {
+    display: block;
+    width: 200px;
+    height: 45px;
+}
+
+.logo-lockup-footer {
+    width: 220px;
+    height: 50px;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    margin-right: 1.5rem;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .logo-lockup {
+        width: 170px;
+        height: 39px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .logo-lockup {
+        width: 170px;
+        height: 39px;
+    }
+}
+.logo-tile { display: flex; align-items: center; justify-content: center; min-height: 190px; padding: 2.5rem; border-radius: 20px; box-shadow: var(--card-shadow); }
+.logo-tile img { max-width: 100%; height: auto; }
+.logo-tile-light { background: #FFFCF8; }
+.logo-tile-dark { background: #0A0F17; }
+.logo-tile-sq { height: 200px; min-height: 0; padding: 1.5rem; }
+.logo-avatar { border-radius: 50%; }
+.logo-donts .icon { color: #B02A37 !important; background: rgba(176, 42, 55, .1) !important; }
+[data-theme="dark"] .logo-donts .icon { color: #FF8A95 !important; }
+/*** ============ Logo End ============ ***/

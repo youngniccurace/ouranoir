@@ -2,10 +2,10 @@
  * Theme + palette, applied before first paint (kept tiny on purpose; loaded in <head>).
  *  - Dark mode: saved choice ("ouranoir-theme") or the device setting.
  *  - Colour prototypes: preview with ?palette=blue | pink | spectrum | gold (remembered for the
- *    browser tab only). The live brand stays gold unless DEFAULT_PALETTE is changed below.
+ *    browser tab only). The live palette is DEFAULT_PALETTE below (also set on <html> by the page build).
  */
 (function () {
-    var DEFAULT_PALETTE = "gold";
+    var DEFAULT_PALETTE = "blue"; // Palette B "Noir, Gold & Azure" (see brand.html)
     var root = document.documentElement;
     var theme = null;
     try { theme = localStorage.getItem("ouranoir-theme"); } catch (e) { /* storage blocked */ }

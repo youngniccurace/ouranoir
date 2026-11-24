@@ -37,10 +37,17 @@
         notify(state);
     }
 
+    // While the banner is open, reserve space at the bottom of the page so it never covers
+    // buttons or form fields (visitors can always scroll everything above it)
+    function reserveSpace(on) {
+        document.body.style.paddingBottom = on && banner ? (banner.offsetHeight + 24) + "px" : "";
+    }
+
     function hide() {
         if (banner) {
             banner.hidden = true;
         }
+        reserveSpace(false);
     }
 
     function show() {
@@ -50,6 +57,7 @@
             ? "Current choice: analytics " + (state.analytics ? "on." : "off.")
             : "";
         banner.hidden = false;
+        reserveSpace(true);
         banner.querySelector("[data-consent-accept]").focus({ preventScroll: true });
     }
 
